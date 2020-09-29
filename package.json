@@ -1,0 +1,24 @@
+{
+  "name": "DIG",
+  "version": "1.0.0",
+  "description": "Fall 2020 Dream In Green Project",
+  "main": "main.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SparkDevTeams/Fall-2020-DIG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SparkDevTeams/Fall-2020-DIG/issues"
+  },
+  "homepage": "https://github.com/SparkDevTeams/Fall-2020-DIG#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
