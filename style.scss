@@ -1,0 +1,17 @@
+// Variables
+$theme-colors: (
+  'primary': #3d9e67,
+  'dark': #19191b,
+  'secondary': #696871,
+);
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// components
+.nav-bar-logo {
+  max-width: 200px;
+}
+
+.btn {
+  border-radius: 10px;
+}
