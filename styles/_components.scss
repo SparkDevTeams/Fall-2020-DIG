@@ -1,0 +1,37 @@
+// Bootstrap components
+.display-3 {
+  line-height: 0.98;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.25rem;
+  }
+}
+
+.nav-bar-logo {
+  max-width: 200px;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+// Custom Components
+.hero-img-right {
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 80px;
+  }
+}
+
+.hero-img-left {
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 80px;
+  }
+}
