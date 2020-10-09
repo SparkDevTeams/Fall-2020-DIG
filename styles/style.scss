@@ -6,12 +6,18 @@ $theme-colors: (
 );
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import 'objects';
+@import 'components';
 
-// components
+// Bootstrap Components Overrides
 .nav-bar-logo {
   max-width: 200px;
 }
 
 .btn {
   border-radius: 10px;
+}
+
+.display-3 {
+  line-height: 0.98;
 }
