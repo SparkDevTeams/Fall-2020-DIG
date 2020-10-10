@@ -36,6 +36,28 @@
   }
 }
 
+.contact-us label, 
+.contact-us input, 
+.contact-us textarea{
+  text-align: right;
+  padding-left: 0rem;
+
+  @include media-breakpoint-down(xs) {
+    text-align: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0rem;
+  }
+}
+
+.contact-form input, 
+.contact-form .row, 
+.contact-form .form-group{
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 0rem;
+  }
+}
+
 .footer {
   background: rgba(39, 124, 76, 0.87);
   width: 100%;
