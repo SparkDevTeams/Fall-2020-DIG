@@ -20,7 +20,7 @@
   "homepage": "https://github.com/SparkDevTeams/Fall-2020-DIG#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.12"
+    "sass": "^1.27.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
