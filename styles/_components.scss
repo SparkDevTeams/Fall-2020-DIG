@@ -36,12 +36,19 @@
   }
 }
 
-.contact-us label, 
-.contact-us input, 
-.contact-us textarea{
+.contact-us label{
   text-align: right;
   padding-left: 0rem;
 
+  @include media-breakpoint-down(xs) {
+    text-align: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0rem;
+  }
+}
+.contact-us input, 
+.contact-us textarea{
   @include media-breakpoint-down(xs) {
     text-align: left;
     margin-left: 1rem;
