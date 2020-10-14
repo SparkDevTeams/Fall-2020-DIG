@@ -36,7 +36,7 @@
   }
 }
 
-.contact-us label{
+.contact-us label {
   text-align: right;
   padding-left: 0rem;
 
@@ -47,8 +47,8 @@
     margin-bottom: 0rem;
   }
 }
-.contact-us input, 
-.contact-us textarea{
+.contact-us input,
+.contact-us textarea {
   @include media-breakpoint-down(xs) {
     text-align: left;
     margin-left: 1rem;
@@ -57,9 +57,9 @@
   }
 }
 
-.contact-form input, 
-.contact-form .row, 
-.contact-form .form-group{
+.contact-form input,
+.contact-form .row,
+.contact-form .form-group {
   @include media-breakpoint-down(xs) {
     margin-bottom: 0rem;
   }
@@ -79,3 +79,47 @@
     margin-bottom: 0;
   }
 }
+
+// Survey Page
+.question-container {
+  padding: 3.75rem 3rem;
+}
+
+.btn__shadow {
+  width: 100%;
+  height: 100%;
+  background-color: #303bb1;
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 0;
+  transform-origin: top left;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -0.75rem;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-color: transparent #303bb1 transparent transparent;
+    border-style: solid;
+    border-width: 0 0.75rem 0.75rem 0;
+    transform-origin: top right;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -0.75rem;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent transparent #303bb1;
+    border-style: solid;
+    border-width: 0.75rem 0 0 0.75rem;
+    transform-origin: bottom left;
+  }
+}
+
+// End of Survey Page
