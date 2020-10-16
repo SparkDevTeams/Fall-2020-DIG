@@ -1,5 +1,5 @@
 // Bootstrap components
-.display-3 {
+.display-4 {
   line-height: 0.98;
 
   @include media-breakpoint-down(md) {
@@ -74,7 +74,7 @@
 }
 
 .log-in-container {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: theme-color('primary');
@@ -90,7 +90,7 @@
 }
 
 .footer {
-  margin-top: 20px;
+  margin-top: 2rem;
   background-color: #f2f2f2;
   width: 100%;
   color: theme-color('primary');
@@ -101,8 +101,30 @@
 }
 
 // Survey Page
+.survey-page {
+  margin-bottom: -2rem;
+}
+
 .question-container {
   padding: 3.75rem 3rem;
+}
+
+.left-side {
+  background-color: theme-color('primary');
+}
+
+.tips-container__img {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.tips-container__title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.tips-container__text {
 }
 
 // End of Survey Page
