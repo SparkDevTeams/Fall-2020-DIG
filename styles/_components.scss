@@ -73,10 +73,20 @@
   }
 }
 
-.log-in-form {
-  display: flex;
-  flex-direction: column;
+.log-in-container {
+  display:flex;
   align-items: center;
+  justify-content: center;
+  background-color: theme-color('primary');
+  margin-top: -1rem;
+  margin-bottom: -20px;
+  height: calc(100vh - 108px - 116px);
+}
+
+.log-in-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .footer {
