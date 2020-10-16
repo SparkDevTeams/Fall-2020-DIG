@@ -10,7 +10,7 @@ class App extends React.Component {
       <div>
         {/* <Navbar /> */}
         <h1>Hello from react</h1>
-        <Footer />
+        <Footer marginTop={0} test='hello' />
       </div>
     );
   }
