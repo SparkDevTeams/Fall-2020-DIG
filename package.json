@@ -4,7 +4,7 @@
   "description": "Fall 2020 Dream In Green Project",
   "main": "main.js",
   "scripts": {
-    "start": "parcel react.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html"
   },
   "repository": {

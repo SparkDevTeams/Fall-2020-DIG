@@ -1,13 +1,29 @@
 import React from 'react';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import LogIn from './pages/LogIn';
+import Survey from './pages/Survey';
+import Tips from './pages/Tips';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <h1>Hello</h1>
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route path='/log-in'>
+          <LogIn />
+        </Route>
+        <Route path='/survey'>
+          <Survey />
+        </Route>
+        <Route path='/tips'>
+          <Tips />
+        </Route>
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
