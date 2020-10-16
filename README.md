@@ -6,4 +6,4 @@ Fall 2020 Dream In Green Project
 - [React](https://reactjs.org/)
 - [ParcelJs](https://parceljs.org/)
 - [SASS](https://sass-lang.com/)
-- [ReactStrap](https://react-bootstrap.github.io/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
