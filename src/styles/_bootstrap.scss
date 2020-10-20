@@ -1,0 +1,33 @@
+// Variables
+$theme-colors: (
+  'primary': #3d9e67,
+  'dark': #19191b,
+  'secondary': #696871,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+// Bootstrap components
+.display-4 {
+  line-height: 0.98;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.25rem;
+  }
+}
+
+.nav-bar-logo {
+  max-width: 200px;
+}
+
+.btn {
+  border-radius: 10px;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s,
+    border-radius 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-6px);
+    border-radius: 5px;
+  }
+}
