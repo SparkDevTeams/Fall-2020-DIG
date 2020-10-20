@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;600&display=swap');
+
 // Variables
 $theme-colors: (
   'primary': #3d9e67,
@@ -6,6 +8,7 @@ $theme-colors: (
 );
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import 'base';
 @import 'objects';
 @import 'components';
 @import 'utilities';

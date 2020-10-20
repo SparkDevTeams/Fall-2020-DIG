@@ -1,5 +1,5 @@
 // Bootstrap components
-.display-3 {
+.display-4 {
   line-height: 0.98;
 
   @include media-breakpoint-down(md) {
@@ -13,6 +13,14 @@
 
 .btn {
   border-radius: 10px;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s,
+    border-radius 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-6px);
+    border-radius: 5px;
+  }
 }
 
 // Custom Components
@@ -36,7 +44,7 @@
   }
 }
 
-.contact-us label{
+.contact-us label {
   text-align: right;
   padding-left: 0rem;
 
@@ -47,8 +55,8 @@
     margin-bottom: 0rem;
   }
 }
-.contact-us input, 
-.contact-us textarea{
+.contact-us input,
+.contact-us textarea {
   @include media-breakpoint-down(xs) {
     text-align: left;
     margin-left: 1rem;
@@ -57,19 +65,66 @@
   }
 }
 
-.contact-form input, 
-.contact-form .row, 
-.contact-form .form-group{
+.contact-form input,
+.contact-form .row,
+.contact-form .form-group {
   @include media-breakpoint-down(xs) {
     margin-bottom: 0rem;
   }
 }
 
+.log-in-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: theme-color('primary');
+  margin-top: -1rem;
+  margin-bottom: -20px;
+  height: calc(100vh - 108px - 116px);
+}
+
+.log-in-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .footer {
-  background: rgba(39, 124, 76, 0.87);
+  margin-top: 2rem;
+  background-color: #f2f2f2;
   width: 100%;
-  color: white;
+  color: theme-color('primary');
   p {
     margin-bottom: 0;
+    margin-top: 10px;
   }
 }
+
+// Survey Page
+.survey-page {
+  margin-bottom: -2rem;
+}
+
+.question-container {
+  padding: 3.75rem 3rem;
+}
+
+.left-side {
+  background-color: theme-color('primary');
+}
+
+.tips-container__img {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.tips-container__title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.tips-container__text {
+}
+
+// End of Survey Page
