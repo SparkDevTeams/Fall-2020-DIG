@@ -1,57 +1,37 @@
 import React from 'react';
 import navBarImg from '../images/dig-logo.png';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 const NavBar = () => {
   return (
-  	<nav className="navbar navbar-expand-lg navbar-light mb-3">
-    	<div className="container">
-        <a className="navbar-brand" href="#">
+    <Navbar expand='lg'>
+      <div className='container'>
+        <Navbar.Brand href='/'>
           <img
             src={navBarImg}
-            className="nav-bar-logo"
-            alt="Dream In Green logo"
+            className='nav-bar-logo'
+            alt='Dream In Green logo'
           />
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className="collapse navbar-collapse text-center text-lg-left"
-          id="navbarSupportedContent"
-        >
-          <ul className="navbar-nav mr-auto ml-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Home<span className="sr-only">(current)</span>
-							</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">How it works</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Tips</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
-            </li>
-          </ul>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls='nav-bar-component' />
+        <Navbar.Collapse id='nav-bar-component'>
+          <Nav className='mr-auto ml-auto'>
+            <Nav.Link href='/'>Home</Nav.Link>
+            <Nav.Link href='/link'>How it works</Nav.Link>
+            <Nav.Link href='/tips'>Tips</Nav.Link>
+            <Nav.Link href='/about'>About</Nav.Link>
+          </Nav>
           <a
-            type="button"
-            href="#"
-            className="btn btn-primary my-2 my-lg-0 py-3 px-5"
+            type='button'
+            href='#'
+            className='btn btn-primary my-2 my-lg-0 py-3 px-5'
           >
             Get Started
           </a>
-        </div>
+        </Navbar.Collapse>
       </div>
-    </nav>
-	);
+    </Navbar>
+  );
 };
 export default NavBar;
