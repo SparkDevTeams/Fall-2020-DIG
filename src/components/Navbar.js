@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import navBarImg from '../images/dig-logo.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -16,11 +17,19 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='nav-bar-component' />
         <Navbar.Collapse id='nav-bar-component'>
-          <Nav className='mr-auto ml-auto'>
-            <Nav.Link href='/'>Home</Nav.Link>
-            <Nav.Link href='/link'>How it works</Nav.Link>
-            <Nav.Link href='/tips'>Tips</Nav.Link>
-            <Nav.Link href='/about'>About</Nav.Link>
+          <Nav className='mr-auto ml-auto' defaultActiveKey='/'>
+            <Nav.Link eventKey='/'>
+              <Link to='/'>Home</Link>
+            </Nav.Link>
+            <Nav.Link eventKey='/link'>
+              <Link to='/link'>How it works</Link>
+            </Nav.Link>
+            <Nav.Link eventKey='/tips'>
+              <Link to='/tips'>Tips</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to='/about'>About</Link>
+            </Nav.Link>
           </Nav>
           <a
             type='button'
