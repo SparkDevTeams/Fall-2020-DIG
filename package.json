@@ -2,7 +2,7 @@
   "name": "DIG",
   "version": "1.0.0",
   "description": "Fall 2020 Dream In Green Project",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
