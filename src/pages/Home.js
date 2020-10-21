@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from '../components/Footer';
 import NavBar from '../components/Navbar';
 import Carousel from 'react-bootstrap/Carousel';
+import homeImgFir from '../images/girl-earth.svg';
+import homeImgSec from '../images/contact-us-image.svg';
 
 const Home = () => {
   return (
@@ -30,7 +32,6 @@ const Home = () => {
           />
         </Carousel.Item>
       </Carousel>
-
       <div className='container'>
         <div className='row mb-5 mt-5 hero-row-reverse-mobile'>
           <div className='col-lg-6 text-center txt-md-left'>
@@ -44,6 +45,9 @@ const Home = () => {
               easy to use application so that kids all over the word can keep
               track of their emissions and learn to be better citizens.
             </p>
+            // Dream in Green teamed up with SparkDev and Microsoft to build this
+              easy to use application so that kids from all over the world can learn
+              about their impact on the enviroment and how to create a better world.
             <button
               type='button'
               className='btn btn-primary my-2 my-lg-0 py-3 px-5'
@@ -54,7 +58,7 @@ const Home = () => {
           <div className='col-lg-6'>
             <div className='hero-img-right'>
               <img
-                src='./images/girl-earth.svg'
+                src={homeImgFir}
                 className='fluid-img'
                 alt='Sitting on questionnaire'
               />
@@ -66,7 +70,7 @@ const Home = () => {
           <div className='col-lg-6'>
             <div className='hero-img-left'>
               <img
-                src='images/contact-us-image.svg'
+                src={homeImgSec}
                 className='fluid-img'
                 alt='Woman holding envelope'
               />
