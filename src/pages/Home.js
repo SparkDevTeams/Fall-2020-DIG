@@ -1,8 +1,11 @@
 import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../components/Footer';
 import NavBar from '../components/Navbar';
-import Carousel from 'react-bootstrap/Carousel';
 import ContactUsForm from '../components/ContactUsForm';
+
+import homeImgFir from '../images/girl-earth.svg';
+import homeImgSec from '../images/contact-us-image.svg';
 
 const Home = () => {
   return (
@@ -31,7 +34,6 @@ const Home = () => {
           />
         </Carousel.Item>
       </Carousel>
-
       <div className='container'>
         <div className='row mb-5 mt-5 hero-row-reverse-mobile'>
           <div className='col-lg-6 text-center txt-md-left'>
@@ -41,9 +43,10 @@ const Home = () => {
               </h1>
             </div>
             <p className='lead'>
-              Dream in Green teamed up with Sparkdev and Microsoft to build this
-              easy to use application so that kids all over the word can keep
-              track of their emissions and learn to be better citizens.
+              Dream in Green teamed up with SparkDev and Microsoft to build this
+              easy to use application so that kids from all over the world can
+              learn about their impact on the environment and how to create a
+              better world.
             </p>
             <button
               type='button'
@@ -55,7 +58,7 @@ const Home = () => {
           <div className='col-lg-6'>
             <div className='hero-img-right'>
               <img
-                src='./images/girl-earth.svg'
+                src={homeImgFir}
                 className='fluid-img'
                 alt='Sitting on questionnaire'
               />
