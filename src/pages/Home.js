@@ -4,9 +4,6 @@ import NavBar from '../components/Navbar';
 import Carousel from 'react-bootstrap/Carousel';
 import ContactUsForm from '../components/ContactUsForm';
 
-
-
-
 const Home = () => {
   return (
     <div>
@@ -65,14 +62,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-
-
-
-
-        
         <div>
-        <ContactUsForm />
+          <ContactUsForm />
         </div>
       </div>
       <Footer />
