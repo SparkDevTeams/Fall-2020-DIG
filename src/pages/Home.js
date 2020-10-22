@@ -41,13 +41,11 @@ const Home = () => {
               </h1>
             </div>
             <p className='lead'>
-              Dream in Green teamed up with Sparkdev and Microsoft to build this
-              easy to use application so that kids all over the word can keep
-              track of their emissions and learn to be better citizens.
+              Dream in Green teamed up with SparkDev and Microsoft to build this
+              easy to use application so that kids from all over the world can
+              learn about their impact on the environment and how to create a
+              better world.
             </p>
-            // Dream in Green teamed up with SparkDev and Microsoft to build this
-              easy to use application so that kids from all over the world can learn
-              about their impact on the enviroment and how to create a better world.
             <button
               type='button'
               className='btn btn-primary my-2 my-lg-0 py-3 px-5'
