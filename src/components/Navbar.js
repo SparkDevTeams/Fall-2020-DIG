@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import navBarImg from '../images/dig-logo.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+
+import logoImg from '../images/dig-logo.png';
 
 const NavBar = () => {
   const [activeKey, setActiveKey] = useState(0);
@@ -12,7 +13,7 @@ const NavBar = () => {
       <div className='container'>
         <Navbar.Brand as={Link} to='/'>
           <img
-            src={navBarImg}
+            src={logoImg}
             className='nav-bar-logo'
             alt='Dream In Green logo'
           />

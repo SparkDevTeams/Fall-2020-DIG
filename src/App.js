@@ -9,26 +9,24 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <main>
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/log-in'>
-            <LogIn />
-          </Route>
-          <Route path='/survey'>
-            <Survey />
-          </Route>
-          <Route path='/tips'>
-            <Tips />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
-    </main>
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route path='/log-in'>
+          <LogIn />
+        </Route>
+        <Route path='/survey'>
+          <Survey />
+        </Route>
+        <Route path='/tips'>
+          <Tips />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   );
 };
 
