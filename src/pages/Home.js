@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Footer from '../components/Footer';
 import ContactUsForm from '../components/ContactUsForm';
 
 import homeImgFir from '../images/girl-earth.svg';
@@ -67,7 +66,6 @@ const Home = () => {
           <ContactUsForm />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

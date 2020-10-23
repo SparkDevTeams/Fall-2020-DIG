@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../components/Footer';
 
 const Survey = () => {
   return (
@@ -40,7 +39,6 @@ const Survey = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
