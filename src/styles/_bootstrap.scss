@@ -17,7 +17,49 @@ $theme-colors: (
 }
 
 .nav-bar-logo {
-  max-width: 200px;
+  width: 150px;
+}
+
+.nav-link {
+  transition: color 0.1s, background-color 0.1s;
+  position: relative;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: theme-color('primary') !important;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+
+    // Remove bootstrap padding and change for margin for smaller underline
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: theme-color('primary');
+      transform-origin: center top;
+      transform: scale(0, 1);
+      transition: color 0.1s, transform 0.2s ease-out;
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &.active::before {
+      transform-origin: center top;
+      transform: scale(1, 1);
+    }
+  }
 }
 
 .btn {

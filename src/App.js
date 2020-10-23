@@ -4,10 +4,13 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Survey from './pages/Survey';
 import Tips from './pages/Tips';
+import NavBar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <Router>
+      <NavBar />
       <Switch>
         <Route exact path='/'>
           <Home />
@@ -22,6 +25,7 @@ const App = () => {
           <Tips />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 };
