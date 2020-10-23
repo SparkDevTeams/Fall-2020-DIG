@@ -37,7 +37,7 @@ const NavBar = () => {
               About
             </Nav.Link>
           </Nav>
-          <Link to='/survey' className='btn btn-primary my-2 my-lg-0 py-3 px-5'>
+          <Link to='/log-in' className='btn btn-primary my-2 my-lg-0 py-3 px-5'>
             Get Started
           </Link>
         </Navbar.Collapse>
