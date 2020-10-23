@@ -1,14 +1,16 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import navBarImg from '../images/dig-logo.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 const NavBar = () => {
+  const [activeKey, setActiveKey] = useState(0);
+
   return (
     <Navbar expand='lg'>
       <div className='container'>
-        <Navbar.Brand href='/'>
+        <Navbar.Brand as={Link} to='/'>
           <img
             src={navBarImg}
             className='nav-bar-logo'
@@ -17,18 +19,23 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='nav-bar-component' />
         <Navbar.Collapse id='nav-bar-component'>
-          <Nav className='mr-auto ml-auto' defaultActiveKey='/'>
-            <Nav.Link eventKey='/'>
-              <Link to='/'>Home</Link>
+          <Nav
+            className='mr-auto ml-auto'
+            activeKey='/'
+            activeKey={activeKey}
+            onSelect={(selectedKey) => setActiveKey(selectedKey)}
+          >
+            <Nav.Link as={Link} to='/' eventKey={0}>
+              Home
             </Nav.Link>
-            <Nav.Link eventKey='/link'>
-              <Link to='/link'>How it works</Link>
+            <Nav.Link as={Link} to='/survey' eventKey={1}>
+              How it works
             </Nav.Link>
-            <Nav.Link eventKey='/tips'>
-              <Link to='/tips'>Tips</Link>
+            <Nav.Link as={Link} to='/tips' eventKey={2}>
+              Tips
             </Nav.Link>
-            <Nav.Link>
-              <Link to='/about'>About</Link>
+            <Nav.Link as={Link} to='/survey' eventKey={3}>
+              About
             </Nav.Link>
           </Nav>
           <a
