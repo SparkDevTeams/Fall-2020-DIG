@@ -1,11 +1,9 @@
 import React from 'react';
 import Footer from '../components/Footer';
-import NavBar from '../components/Navbar';
 
 const LogIn = () => {
   return (
     <div>
-      <NavBar />
       <div className='log-in-container'>
         <div className='log-in-form'>
           <div className='form-group mb-2'>

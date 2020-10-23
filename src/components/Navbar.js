@@ -21,7 +21,6 @@ const NavBar = () => {
         <Navbar.Collapse id='nav-bar-component'>
           <Nav
             className='mr-auto ml-auto'
-            activeKey='/'
             activeKey={activeKey}
             onSelect={(selectedKey) => setActiveKey(selectedKey)}
           >
@@ -38,13 +37,9 @@ const NavBar = () => {
               About
             </Nav.Link>
           </Nav>
-          <a
-            type='button'
-            href='#'
-            className='btn btn-primary my-2 my-lg-0 py-3 px-5'
-          >
+          <Link to='/survey' className='btn btn-primary my-2 my-lg-0 py-3 px-5'>
             Get Started
-          </a>
+          </Link>
         </Navbar.Collapse>
       </div>
     </Navbar>

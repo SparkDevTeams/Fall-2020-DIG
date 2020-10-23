@@ -1,7 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../components/Footer';
-import NavBar from '../components/Navbar';
 import ContactUsForm from '../components/ContactUsForm';
 
 import homeImgFir from '../images/girl-earth.svg';
@@ -10,7 +9,6 @@ import homeImgSec from '../images/contact-us-image.svg';
 const Home = () => {
   return (
     <div>
-      <NavBar />
       <Carousel indicators={false}>
         <Carousel.Item>
           <img

@@ -4,25 +4,29 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Survey from './pages/Survey';
 import Tips from './pages/Tips';
+import NavBar from './components/Navbar';
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/log-in'>
-          <LogIn />
-        </Route>
-        <Route path='/survey'>
-          <Survey />
-        </Route>
-        <Route path='/tips'>
-          <Tips />
-        </Route>
-      </Switch>
-    </Router>
+    <main>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/log-in'>
+            <LogIn />
+          </Route>
+          <Route path='/survey'>
+            <Survey />
+          </Route>
+          <Route path='/tips'>
+            <Tips />
+          </Route>
+        </Switch>
+      </Router>
+    </main>
   );
 };
 
