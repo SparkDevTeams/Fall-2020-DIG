@@ -3,7 +3,6 @@ import React from 'react';
 const Tips = () => {
   return (
     <div>
-      <NavBar />
       <div className='tips-container'>
         <div className='transportation-tips'>
           <div className='form-group mb-2'>
@@ -77,7 +76,7 @@ const Tips = () => {
               of carbon dioxide. Using cold water instead of hot/warm water can
               also clean your clothes better.
             </div>
-            <div class='panel'>
+            <div className='panel'>
               {' '}
               🍃 Buying secondhand clothes can save the resources used to
               otherwise create a new clothing piece. Shopping for second hand
@@ -87,7 +86,6 @@ const Tips = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
