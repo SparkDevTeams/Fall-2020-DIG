@@ -1,11 +1,8 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import NavBar from '../components/Navbar';
 
 const Survey = () => {
   return (
     <div>
-      <NavBar/>
       <div className='container-fluid survey-page'>
         <div className='row survey-row'>
           <div className='col left-side'>
@@ -42,7 +39,6 @@ const Survey = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

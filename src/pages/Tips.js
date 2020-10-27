@@ -1,11 +1,9 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import NavBar from '../components/Navbar';
 
 const Tips = () => {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <div className='tips-container'>
         <div className='transportation-tips'>
           <div className='form-group mb-2'>
