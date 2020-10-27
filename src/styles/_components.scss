@@ -114,3 +114,46 @@
 .table td {
   padding: .50rem;
 }
+
+.profile-container {
+  margin: auto;
+  max-width: 1000px;
+  min-height: calc(-215px + 100vh);
+  justify-content: center;
+}
+
+.profile-card {
+  align-items: center;
+}
+
+.profile-image {
+  height: 150px;
+  width: 150px;
+}
+
+.profile-card-text {
+  border-top: 1px solid theme-color('primary');
+  width: 100%;
+  padding: 1.25rem 1.25rem 0rem 1.25rem;
+}
+
+.profile-card-text-btm {
+  border-top: 1px solid theme-color('primary');
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.profile-center-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-user-col {
+  max-width: 360px;
+  min-width: 320px;
+}
+
+.profile-table-col {
+  max-width: 570px;
+  min-width: 320px;
+}

@@ -8,22 +8,22 @@ import Table from 'react-bootstrap/Table';
 const Profile = () => {
   return (
     <div className='container mw-100'>
-      <div className='row'style={{margin:"auto", maxWidth:"1000px", minHeight:"calc(-215px + 100vh)", justifyContent:"center"}}>
+      <div className='row profile-container'>
 
-        <div className='col m-3' style={{maxWidth:"370px", minWidth:"330px"}}>
-          <Card border="primary" style={{alignItems: "center"}}>
-            <Image src={defaultProfile} roundedCircle style={{height: "150px", width: "150px"}}/>
+        <div className='col m-3 profile-user-col'>
+          <Card className='profile-card' border="primary">
+            <Image className='profile-image' src={defaultProfile} roundedCircle/>
             <Card.Title>Maria Vasquez</Card.Title>
-              <Card.Text style={{borderTop:"1px solid #3d9e67", width:"100%", padding:"1.25rem", paddingBottom:"0rem"}}>
+              <Card.Text className='profile-card-text'>
                 Username: Mari123<br />
                 School: Kendale Lakes Elementary <br />
                 Grade: 5th
               </Card.Text>
-              <Card.Text style={{borderTop:"1px solid #3d9e67", width:"100%", padding:"1.25rem"}}>
+              <Card.Text className='profile-card-text-btm'>
                 Last Survey Taken: October 10th, 2020<br />
                 Number of Survey's Taken: 12<br/>
                 Average Score: 78 points<br />
-                <div style={{justifyContent:"center", display:"flex"}}>
+                <div className='profile-center-container'>
                   <button
                     type='button'
                     className='btn btn-primary mt-3 py-2 px-5'
@@ -35,9 +35,9 @@ const Profile = () => {
           </Card>
         </div>
 
-        <div className='col m-3' style={{maxWidth:"570px", minWidth:"530px"}}>
-          <Card border="primary" style={{alignItems: "center"}}>
-            <h3 className="mb-0">Survey History</h3>
+        <div className='col m-3 profile-table-col'>
+          <Card className='profile-card' border='primary'>
+            <h3 className='mb-0'>Survey History</h3>
             <Table striped borderless hover className="mb-0">
               <thead>
                 <tr>
