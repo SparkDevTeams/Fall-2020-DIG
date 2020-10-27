@@ -4,8 +4,10 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Survey from './pages/Survey';
 import Tips from './pages/Tips';
+import Points from './pages/Points';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
+
 
 const App = () => {
   return (
@@ -23,6 +25,9 @@ const App = () => {
         </Route>
         <Route path='/tips'>
           <Tips />
+        </Route>
+        <Route path='/points'>
+          <Points />
         </Route>
       </Switch>
       <Footer />
