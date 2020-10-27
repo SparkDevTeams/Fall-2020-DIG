@@ -14,8 +14,8 @@ const Questionnaire = () => {
     <div>
       <div className='container-fluid'>
         <div className='row questionnaire-row'>
-          <div className='col questionnaire-left'></div>
-          <div className='col questionnaire-right'>
+          <div className='col-lg-6 questionnaire-left'></div>
+          <div className='col-lg-6 questionnaire-right'>
             <Carousel
               activeIndex={index}
               onSelect={handleSelect}
