@@ -1,15 +1,16 @@
 $c-carousel-control-color: #fff !default;
 $c-carousel-control-width: 15% !default;
-$c-carousel-control-opacity: 0.5 !default;
-$c-carousel-control-hover-opacity: 0.9 !default;
+$c-carousel-control-opacity: 1 !default;
+$c-carousel-control-hover-opacity: 1 !default;
 $c-carousel-control-transition: opacity 0.15s ease !default;
 
-$c-carousel-indicator-width: 30px !default;
-$c-carousel-indicator-height: 3px !default;
+$c-carousel-indicator-width: 10px !default;
+$c-carousel-indicator-height: 10px !default;
 $c-carousel-indicator-hit-area-height: 10px !default;
 $c-carousel-indicator-spacer: 3px !default;
-$c-carousel-indicator-active-bg: #fff !default;
-$c-carousel-indicator-transition: opacity 0.6s ease !default;
+$c-carousel-indicator-active-bg: theme-color('primary') !default;
+$c-carousel-indicator-non-active-bg: #d8d8d8 !default;
+$c-carousel-indicator-transition: background-color 0.6s ease !default;
 
 $c-carousel-caption-width: 70% !default;
 $c-carousel-caption-color: #fff !default;
@@ -37,6 +38,7 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 
 .c-carousel {
   position: relative;
+  height: 100%;
 }
 
 .c-carousel.pointer-event {
@@ -190,21 +192,21 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
     flex: 0 1 auto;
     width: $c-carousel-indicator-width;
     height: $c-carousel-indicator-height;
+    border-radius: 100%;
     margin-right: $c-carousel-indicator-spacer;
     margin-left: $c-carousel-indicator-spacer;
     text-indent: -999px;
     cursor: pointer;
-    background-color: $c-carousel-indicator-active-bg;
+    background-color: $c-carousel-indicator-non-active-bg;
     background-clip: padding-box;
     // Use transparent borders to increase the hit area by 10px on top and bottom.
     border-top: $c-carousel-indicator-hit-area-height solid transparent;
     border-bottom: $c-carousel-indicator-hit-area-height solid transparent;
-    opacity: 0.5;
     @include transition($c-carousel-indicator-transition);
   }
 
   .active {
-    opacity: 1;
+    background-color: $c-carousel-indicator-active-bg;
   }
 }
 
@@ -222,4 +224,14 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   padding-bottom: 20px;
   color: $c-carousel-caption-color;
   text-align: center;
+}
+
+// Non-Bootstrap
+
+.questionnaire-row {
+  min-height: calc(100vh - 87px - 127px);
+}
+
+.questionnaire-left {
+  background-color: lighten(theme-color('primary'), 15%);
 }

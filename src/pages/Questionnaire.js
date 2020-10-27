@@ -12,29 +12,10 @@ const Questionnaire = () => {
 
   return (
     <div>
-      <div className='container-fluid survey-page'>
-        <div className='row survey-row'>
-          <div className='col left-side'>
-            <div className='tips-container pt-5 p-3'>
-              <div className='tips-container__img mb-4'>
-                <img
-                  className='d-block w-100'
-                  src='https://via.placeholder.com/350x150'
-                  alt='placeholder'
-                />
-              </div>
-              <div className='tips-container__tip'>
-                <h3 className='tips-container__title'>Did you know?</h3>
-                <p className='tips-container__text'>
-                  New apparel production releases 4M tons of harmful carbon
-                  emissions annually, contributing more than 8% of global
-                  greenhouse emissions. The single best thing we can do for the
-                  planet is consume less and reuse more.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col right-side'>
+      <div className='container-fluid'>
+        <div className='row questionnaire-row'>
+          <div className='col questionnaire-left'></div>
+          <div className='col questionnaire-right'>
             <Carousel
               activeIndex={index}
               onSelect={handleSelect}
@@ -42,6 +23,8 @@ const Questionnaire = () => {
               nextIcon={<Button variant='primary'>Next</Button>}
               prevIcon={<Button variant='primary'>Back</Button>}
               bsPrefix='c-carousel'
+              wrap={false}
+              indicators={true}
             >
               <Carousel.Item>
                 <img
