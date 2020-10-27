@@ -34,7 +34,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to='/tips' eventKey={2}>
               Tips
             </Nav.Link>
-            <Nav.Link as={Link} to='/survey' eventKey={3}>
+            <Nav.Link as={Link} to='/profile' eventKey={3}>
               About
             </Nav.Link>
           </Nav>
