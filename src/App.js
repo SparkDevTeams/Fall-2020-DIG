@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
-import Survey from './pages/Survey';
+import Questionnaire from './pages/Questionnaire';
 import Tips from './pages/Tips';
 import Points from './pages/Points';
+import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -20,14 +21,17 @@ const App = () => {
         <Route path='/log-in'>
           <LogIn />
         </Route>
-        <Route path='/survey'>
-          <Survey />
+        <Route path='/questionnaire'>
+          <Questionnaire />
         </Route>
         <Route path='/tips'>
           <Tips />
         </Route>
         <Route path='/points'>
           <Points />
+        </Route>
+        <Route path='/profile'>
+          <Profile />
         </Route>
       </Switch>
       <Footer />

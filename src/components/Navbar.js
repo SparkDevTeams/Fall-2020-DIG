@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <Navbar expand='lg'>
       <div className='container'>
-        <Navbar.Brand as={Link} to='/'>
+        <Navbar.Brand as={Link} to='/' onClick={() => setActiveKey(0)}>
           <img
             src={logoImg}
             className='nav-bar-logo'
@@ -28,14 +28,14 @@ const NavBar = () => {
             <Nav.Link as={Link} to='/' eventKey={0}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to='/survey' eventKey={1}>
-              How it works
+            <Nav.Link as={Link} to='/questionnaire' eventKey={1}>
+              Questionnaire
             </Nav.Link>
             <Nav.Link as={Link} to='/tips' eventKey={2}>
               Tips
             </Nav.Link>
-            <Nav.Link as={Link} to='/survey' eventKey={3}>
-              About
+            <Nav.Link as={Link} to='/profile' eventKey={3}>
+              Profile
             </Nav.Link>
             <Nav.Link as={Link} to='/points' eventKey={4}>
               Points
