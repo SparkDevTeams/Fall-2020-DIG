@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Questionnaire from './pages/Questionnaire';
 import Tips from './pages/Tips';
+import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -23,6 +24,9 @@ const App = () => {
         </Route>
         <Route path='/tips'>
           <Tips />
+        </Route>
+        <Route path='/profile'>
+          <Profile />
         </Route>
       </Switch>
       <Footer />

@@ -29,13 +29,13 @@ const NavBar = () => {
               Home
             </Nav.Link>
             <Nav.Link as={Link} to='/questionnaire' eventKey={1}>
-              How it works
+              Questionnaire
             </Nav.Link>
             <Nav.Link as={Link} to='/tips' eventKey={2}>
               Tips
             </Nav.Link>
-            <Nav.Link as={Link} to='/questionnaire' eventKey={3}>
-              About
+            <Nav.Link as={Link} to='/profile' eventKey={3}>
+              Profile
             </Nav.Link>
           </Nav>
           <Link to='/log-in' className='btn btn-primary my-2 my-lg-0 py-3 px-5'>
