@@ -1,0 +1,175 @@
+$c-carousel-control-color: #fff !default;
+$c-carousel-control-width: 15% !default;
+$c-carousel-control-opacity: 1 !default;
+$c-carousel-control-hover-opacity: 1 !default;
+$c-carousel-control-transition: opacity 0.15s ease !default;
+
+$c-carousel-indicator-width: 10px !default;
+$c-carousel-indicator-height: 10px !default;
+$c-carousel-indicator-hit-area-height: 10px !default;
+$c-carousel-indicator-spacer: 3px !default;
+$c-carousel-indicator-active-bg: theme-color('primary') !default;
+$c-carousel-indicator-non-active-bg: #d8d8d8 !default;
+$c-carousel-indicator-transition: background-color 0.6s ease !default;
+
+$c-carousel-caption-width: 70% !default;
+$c-carousel-caption-color: #fff !default;
+
+$c-carousel-control-icon-width: 20px !default;
+
+$c-carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$c-carousel-control-color}' width='8' height='8' viewBox='0 0 8 8'><path d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/></svg>") !default;
+$c-carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$c-carousel-control-color}' width='8' height='8' viewBox='0 0 8 8'><path d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/></svg>") !default;
+
+$c-carousel-transition-duration: 0.6s !default;
+$c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !default; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+
+// Notes on the classes:
+//
+// 1. .c-carousel.pointer-event should ideally be pan-y (to allow for users to scroll vertically)
+//    even when their scroll action started on a c-carousel, but for compatibility (with Firefox)
+//    we're preventing all actions instead
+// 2. The .c-carousel-item-left and .c-carousel-item-right is used to indicate where
+//    the active slide is heading.
+// 3. .active.c-carousel-item is the current slide.
+// 4. .active.c-carousel-item-left and .active.c-carousel-item-right is the current
+//    slide in its in-transition state. Only one of these occurs at a time.
+// 5. .c-carousel-item-next.c-carousel-item-left and .c-carousel-item-prev.c-carousel-item-right
+//    is the upcoming slide in transition.
+
+.c-carousel {
+  position: relative;
+  height: 100%;
+  padding-top: 50px;
+}
+
+.c-carousel.pointer-event {
+  touch-action: pan-y;
+}
+
+.c-carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  @include clearfix();
+}
+
+.c-carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  @include transition($c-carousel-transition);
+}
+
+.c-carousel-item.active,
+.c-carousel-item-next,
+.c-carousel-item-prev {
+  display: block;
+}
+
+.c-carousel-item-next:not(.c-carousel-item-left),
+.active.c-carousel-item-right {
+  transform: translateX(100%);
+}
+
+.c-carousel-item-prev:not(.c-carousel-item-right),
+.active.c-carousel-item-left {
+  transform: translateX(-100%);
+}
+
+//
+// Alternate transitions
+//
+
+.c-carousel-fade {
+  .c-carousel-item {
+    opacity: 0;
+    transition-property: opacity;
+    transform: none;
+  }
+
+  .c-carousel-item.active,
+  .c-carousel-item-next.c-carousel-item-left,
+  .c-carousel-item-prev.c-carousel-item-right {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .active.c-carousel-item-left,
+  .active.c-carousel-item-right {
+    z-index: 0;
+    opacity: 0;
+    @include transition(opacity 0s $c-carousel-transition-duration);
+  }
+}
+
+//
+// Left/right controls for nav
+//
+
+.c-carousel-control-prev,
+.c-carousel-control-next {
+  // Hover/focus state
+  @include hover-focus() {
+    color: $c-carousel-control-color;
+    text-decoration: none;
+    outline: 0;
+    opacity: $c-carousel-control-hover-opacity;
+  }
+}
+
+// Optional indicator pips
+//
+// Add an ordered list with the following class and add a list item for each
+// slide your c-carousel holds.
+
+.c-carousel-indicators {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0; // override <ol> default
+  list-style: none;
+
+  li {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: $c-carousel-indicator-width;
+    height: $c-carousel-indicator-height;
+    border-radius: 100%;
+    margin-right: $c-carousel-indicator-spacer;
+    margin-left: $c-carousel-indicator-spacer;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: $c-carousel-indicator-non-active-bg;
+    background-clip: padding-box;
+    // Use transparent borders to increase the hit area by 10px on top and bottom.
+    border-top: $c-carousel-indicator-hit-area-height solid transparent;
+    border-bottom: $c-carousel-indicator-hit-area-height solid transparent;
+    @include transition($c-carousel-indicator-transition);
+  }
+
+  .active {
+    background-color: $c-carousel-indicator-active-bg;
+  }
+}
+
+// Non-Bootstrap
+
+.questionnaire-row {
+  min-height: calc(100vh - 87px - 127px);
+}
+
+.questionnaire-left {
+  background-color: lighten(theme-color('primary'), 15%);
+}
+
+.questionnaire-step-counter {
+  font-size: 18px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}

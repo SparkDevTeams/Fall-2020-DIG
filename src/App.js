@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
-import Survey from './pages/Survey';
+import Questionnaire from './pages/Questionnaire';
 import Tips from './pages/Tips';
 import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
@@ -19,8 +19,8 @@ const App = () => {
         <Route path='/log-in'>
           <LogIn />
         </Route>
-        <Route path='/survey'>
-          <Survey />
+        <Route path='/questionnaire'>
+          <Questionnaire />
         </Route>
         <Route path='/tips'>
           <Tips />

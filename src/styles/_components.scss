@@ -57,8 +57,7 @@
   align-items: center;
   justify-content: center;
   background-color: theme-color('primary');
-  min-height: 273px;
-  height: calc(100vh - 87px - 116px);
+  min-height: calc(100vh - 87px - 127px);
 }
 
 .log-in-form {
@@ -79,30 +78,6 @@
 
 .footer__logo {
   width: 150px;
-}
-
-// Survey Page
-.survey-page {
-  margin-bottom: -2rem;
-}
-
-.question-container {
-  padding: 3.75rem 3rem;
-}
-
-.left-side {
-  background-color: theme-color('primary');
-}
-
-.tips-container__img {
-  width: 20rem;
-  margin: 0 auto;
-}
-
-.tips-container__title {
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
 }
 
 .accordion {
@@ -128,7 +103,7 @@
 
 .table th,
 .table td {
-  padding: .50rem;
+  padding: 0.5rem;
 }
 
 .profile-container {
