@@ -6,34 +6,24 @@ import Nav from 'react-bootstrap/Nav';
 import logoImg from '../images/dig-logo.png';
 
 const NavBar = () => {
-  const [activeKey, setActiveKey] = useState(0);
+  const [activeKey, setActiveKey] = useState(-1);
 
   const location = useLocation();
 
   useEffect(() => {
-    if(location.pathname == "/")
-    {
-      console.log("We are home");
+    if(location.pathname == "/"){
       setActiveKey(0);
     }
-    else if(location.pathname == "/questionnaire")
-    {
-      console.log("I love questions");
+    else if(location.pathname == "/questionnaire"){
       setActiveKey(1);
     }
-    else if(location.pathname == "/tips")
-    {
-      console.log("So much info :o");
+    else if(location.pathname == "/tips"){
       setActiveKey(2);
     }
-    else if(location.pathname == "/profile")
-    {
-      console.log("Look at that pic");
+    else if(location.pathname == "/profile"){
       setActiveKey(3);
     }
-    else
-    {
-      console.log("Where am I?");
+    else{
       setActiveKey(-1);
     }
   },[location]);
