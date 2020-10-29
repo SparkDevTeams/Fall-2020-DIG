@@ -10,18 +10,19 @@ const NavBar = () => {
 
   const location = useLocation();
 
+  //the home page contact form picture col needs to be set col-lg-6 so that it wraps correctly
   useEffect(() => {
-    if(location.pathname == "/"){
-      setActiveKey(0);
-    }
-    else if(location.pathname == "/questionnaire"){
+    if(location.pathname.startsWith("/questionnaire")){
       setActiveKey(1);
     }
-    else if(location.pathname == "/tips"){
+    else if(location.pathname.startsWith("/tips")){
       setActiveKey(2);
     }
-    else if(location.pathname == "/profile"){
+    else if(location.pathname.startsWith("/profile")){
       setActiveKey(3);
+    }
+    else if(location.pathname == "/"){
+      setActiveKey(0);
     }
     else{
       setActiveKey(-1);
