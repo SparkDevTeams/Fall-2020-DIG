@@ -69,12 +69,35 @@ const successPage = () => {
   > 
         <Carousel.Item>
           <h1> Tip 1</h1>
+          <div className='success-section'>
+            <img
+              src={successImg}
+              className='success-img'
+              alt='Woman jumping with cellphone in the background along a check mark'
+            />
+         </div>
         </Carousel.Item>
         <Carousel.Item>
           <h1>Tip 2</h1>
+          <div className='col-lg-6'>
+            <div className='hero-img-right'>
+              <img
+                src={successImg}
+                className='success-img'
+                alt='Sitting on questionnaire'
+              />
+            </div>
+          </div>
         </Carousel.Item>
         <Carousel.Item>
           <h1>Tip 3</h1>
+          <div className='success-section'>
+            <img
+              src={successImg}
+              className='success-img'
+              alt='Woman jumping with cellphone in the background along a check mark'
+            />
+         </div>
         </Carousel.Item>
       </Carousel>
     </Col>
