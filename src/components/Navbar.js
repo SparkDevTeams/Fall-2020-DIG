@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
@@ -7,6 +7,36 @@ import logoImg from '../images/dig-logo.png';
 
 const NavBar = () => {
   const [activeKey, setActiveKey] = useState(0);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if(location.pathname == "/")
+    {
+      console.log("We are home");
+      setActiveKey(0);
+    }
+    else if(location.pathname == "/questionnaire")
+    {
+      console.log("I love questions");
+      setActiveKey(1);
+    }
+    else if(location.pathname == "/tips")
+    {
+      console.log("So much info :o");
+      setActiveKey(2);
+    }
+    else if(location.pathname == "/profile")
+    {
+      console.log("Look at that pic");
+      setActiveKey(3);
+    }
+    else
+    {
+      console.log("Where am I?");
+      setActiveKey(-1);
+    }
+  },[location]);
 
   return (
     <Navbar expand='lg'>
