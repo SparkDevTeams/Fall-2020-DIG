@@ -148,3 +148,39 @@
   max-width: 570px;
   min-width: 320px;
 }
+
+.success-text {
+  justify-content: center;
+  margin-bottom: 3em;
+
+}
+
+.success-score-text {
+  justify-content: center;
+  background-color:#3D9E67;
+  margin-bottom: 6em;;
+}
+
+.success-points {
+  margin-bottom: 6em;
+  justify-content: center;
+  justify-items: normal;
+  height: 80px;
+  width: 250px;
+  border: solid black 1px;
+}
+
+.points {
+  position: relative;
+}
+
+.tips-text {
+  margin-bottom: 3em;
+}
+
+.score-carousel {
+  width: auto;
+  height: 250px;
+  margin-bottom: 3em;
+
+}

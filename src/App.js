@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Questionnaire from './pages/Questionnaire';
 import Tips from './pages/Tips';
-import Points from './pages/Points';
+import Points from './pages/SuccessPage';
 import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
@@ -27,7 +27,7 @@ const App = () => {
         <Route path='/tips'>
           <Tips />
         </Route>
-        <Route path='/points'>
+        <Route path='/success'>
           <Points />
         </Route>
         <Route path='/profile'>
