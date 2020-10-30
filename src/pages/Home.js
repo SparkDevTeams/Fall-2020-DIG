@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import ContactUsForm from '../components/ContactUsForm';
 
 import homeImgFir from '../images/girl-earth.svg';
 import homeImgSec from '../images/contact-us-image.svg';
+import { UserState } from '../states/UserState.js'
 
 const Home = () => {
+
+  const state = useContext(UserState);
+  
   return (
     <div>
       <Carousel indicators={false}>
@@ -45,12 +49,13 @@ const Home = () => {
               learn about their impact on the environment and how to create a
               better world.
             </p>
-            <button
-              type='button'
-              className='btn btn-primary my-2 my-lg-0 py-3 px-5'
-            >
-              Get Started
-            </button>
+                <button
+                type='button'
+                className='btn btn-primary my-2 my-lg-0 py-3 px-5'
+                onClick={() => state.counter = state.counter + 1}
+              >
+                Get Started
+              </button>
           </div>
           <div className='col-lg-6'>
             <div className='hero-img-right'>

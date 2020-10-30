@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'react-bootstrap/Image';
 import defaultProfile from '../images/default-profile-img.jpg';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
-
+import { UserState } from '../states/UserState';
 
 const Profile = () => {
+
+  const state = useContext(UserState);
+
   return (
     <div className='container mw-100'>
       <div className='row profile-container'>
@@ -21,7 +24,7 @@ const Profile = () => {
               </Card.Text>
               <Card.Text className='profile-card-text'>
                 Last Survey Taken: October 10th, 2020<br />
-                Number of Survey's Taken: 12<br/>
+                Number of Survey's Taken: {state.counter}<br/>
                 Average Score: 78 points<br />
               </Card.Text>
               <div className='profile-center-container'>
