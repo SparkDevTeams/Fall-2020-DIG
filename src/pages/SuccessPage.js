@@ -65,27 +65,33 @@ const successPage = () => {
   <Row>
     <Col>
     <Accordion className='accordion-section'>
-      <Card>
+      <Card className='card-section'>
         <Card.Header>
           <Accordion.Toggle variant="link" eventKey="0">
             Energy Tips
           </Accordion.Toggle>
         </Card.Header>
-        <Accordion.Collapse eventKey="0">
+        <Accordion.Collapse eventKey="0" classname='accordion-section'>
           <Card.Body>Energy Tip 1</Card.Body>
         </Accordion.Collapse>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body>Energy Tip 2</Card.Body>
+        </Accordion.Collapse>
       </Card>
-      <Card>
+      <Card className='card-section'>
         <Card.Header>
           <Accordion.Toggle variant="link" eventKey="1">
             Water Tips
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">
-          <Card.Body>Water 1</Card.Body>
+          <Card.Body><h6>Water 1</h6></Card.Body>
+        </Accordion.Collapse>
+        <Accordion.Collapse eventKey="1">
+          <Card.Body>Text for water tip 1 </Card.Body>
         </Accordion.Collapse>
       </Card>
-      <Card>
+      <Card className='card-section'>
         <Card.Header>
           <Accordion.Toggle variant="link" eventKey="2">
             Waste Tips
