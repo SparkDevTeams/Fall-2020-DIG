@@ -38,7 +38,6 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 
 .c-carousel {
   position: relative;
-  height: 100%;
   padding-top: 50px;
 }
 
@@ -170,6 +169,6 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 
 .questionnaire-step-counter {
   font-size: 18px;
-  padding-top: 40px;
+  margin-top: 40px;
   margin-bottom: 0;
 }

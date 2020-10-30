@@ -4,16 +4,21 @@ import questions from '../assets/questions';
 
 const Questionnaire = () => {
   const [index, setIndex] = useState(0);
+  const [score, setScore] = useState({});
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
-  const buildAnswers = ({ ans, type }) => {
+  const buildAnswers = (question, itemIndex) => {
+    const { ans, type } = question;
     if (type === 'multipleChoice') {
       return ans.map((answer, i) => {
         return (
-          <button key={i} value={answer.value}>
+          <button
+            key={i}
+            onClick={() => setScore({ ...score, [itemIndex]: answer.value })}
+          >
             {answer.ans}
           </button>
         );
@@ -23,11 +28,13 @@ const Questionnaire = () => {
     }
   };
 
+  console.log(score);
+
   const htmlOfItems = questions.map((question, i) => {
     return (
       <Carousel.Item key={i}>
         <h2>{question.ques}</h2>
-        {buildAnswers(question)}
+        {buildAnswers(question, i)}
       </Carousel.Item>
     );
   });
