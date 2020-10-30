@@ -2,9 +2,11 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Carousel from 'react-bootstrap/Carousel'
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
 import successImg from '../images/success-image.svg';
+import Button from 'react-bootstrap/esm/Button';
 
 const successPage = () => {
   return (
@@ -35,9 +37,9 @@ const successPage = () => {
   </Row>
   <Row>
     <Col></Col>
-    <Col xs={6} align='center'>
+    <Col xs={3} align='center'>
       <div className='success-score-text'>
-        <h1>Check Your Score!!!</h1>
+        <h3>Check Your Score!!!</h3>
       </div>
     </Col>
     <Col></Col>
@@ -62,44 +64,39 @@ const successPage = () => {
   </Row>
   <Row>
     <Col>
-  <Carousel indicators={false} 
-            prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />}
-            nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" />}
-  
-  > 
-        <Carousel.Item>
-          <h1> Tip 1</h1>
-          <div className='success-section'>
-            <img
-              src={successImg}
-              className='success-img'
-              alt='Woman jumping with cellphone in the background along a check mark'
-            />
-         </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <h1>Tip 2</h1>
-          <div className='col-lg-6'>
-            <div className='hero-img-right'>
-              <img
-                src={successImg}
-                className='success-img'
-                alt='Sitting on questionnaire'
-              />
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <h1>Tip 3</h1>
-          <div className='success-section'>
-            <img
-              src={successImg}
-              className='success-img'
-              alt='Woman jumping with cellphone in the background along a check mark'
-            />
-         </div>
-        </Carousel.Item>
-      </Carousel>
+    <Accordion className='accordion-section'>
+      <Card>
+        <Card.Header>
+          <Accordion.Toggle variant="link" eventKey="0">
+            Energy Tips
+          </Accordion.Toggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body>Energy Tip 1</Card.Body>
+        </Accordion.Collapse>
+      </Card>
+      <Card>
+        <Card.Header>
+          <Accordion.Toggle variant="link" eventKey="1">
+            Water Tips
+          </Accordion.Toggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey="1">
+          <Card.Body>Water 1</Card.Body>
+        </Accordion.Collapse>
+      </Card>
+      <Card>
+        <Card.Header>
+          <Accordion.Toggle variant="link" eventKey="2">
+            Waste Tips
+          </Accordion.Toggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey="2">
+          <Card.Body>Waste 1</Card.Body>
+        </Accordion.Collapse>
+      </Card>
+</Accordion>
+ 
     </Col>
     
   </Row>
