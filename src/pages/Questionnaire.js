@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Button from 'react-bootstrap/Button';
+import questions from '../assets/questions';
 
 const Questionnaire = () => {
   const [index, setIndex] = useState(0);
@@ -8,6 +8,29 @@ const Questionnaire = () => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+  const buildAnswers = ({ ans, type }) => {
+    if (type === 'multipleChoice') {
+      return ans.map((answer, i) => {
+        return (
+          <button key={i} value={answer.value}>
+            {answer.ans}
+          </button>
+        );
+      });
+    } else if (type === 'slider') {
+      return <h1>Slider!</h1>;
+    }
+  };
+
+  const htmlOfItems = questions.map((question, i) => {
+    return (
+      <Carousel.Item key={i}>
+        <h2>{question.ques}</h2>
+        {buildAnswers(question)}
+      </Carousel.Item>
+    );
+  });
 
   return (
     <div>
@@ -22,21 +45,13 @@ const Questionnaire = () => {
               activeIndex={index}
               onSelect={handleSelect}
               interval={null}
-              nextIcon={<Button variant='primary'>Next</Button>}
-              prevIcon={<Button variant='primary'>Back</Button>}
+              nextIcon={<div className='py-3 px-5 btn btn-primary'>Next</div>}
+              prevIcon={<div className='py-3 px-5 btn btn-primary'>Back</div>}
               bsPrefix='c-carousel'
               wrap={false}
               indicators={true}
             >
-              <Carousel.Item>
-                <h1>First slide</h1>
-              </Carousel.Item>
-              <Carousel.Item>
-                <h1>second slide</h1>
-              </Carousel.Item>
-              <Carousel.Item>
-                <h1>third slide</h1>
-              </Carousel.Item>
+              {htmlOfItems}
             </Carousel>
           </div>
         </div>
