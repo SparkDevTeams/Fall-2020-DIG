@@ -7,6 +7,56 @@
   }
 }
 
+.row-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 20px 0;
+  
+
+  .image-container {
+    width: 200px;
+
+    .image {
+      width: 206px;
+      height: 168px;
+      background-repeat: no-repeat;
+
+      &.monitor {
+        background-image: url("/images/nature_on_screen.svg");
+      }
+
+      &.learn {
+        background-image: url("/images/book_love.svg");
+      }
+
+      &.improve {
+        background-image: url("/images/superhero.svg");
+      }
+    }
+
+    .title {
+      font-family: DM Sans;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: center;
+      letter-spacing: -0.750316px;
+    }
+
+    .text {
+      font-family: Mulish;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: -0.500211px;
+    }
+  }
+}
+
 .nav-bar-logo {
   max-width: 200px;
 }
@@ -117,7 +167,7 @@
   margin: 0 auto;
 }
 
-.tips-container__title {
+.tips-contain er__title {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;

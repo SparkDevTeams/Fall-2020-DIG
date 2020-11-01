@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../components/Footer';
+import InformationRow from '../components/InformationRow';
 import NavBar from '../components/Navbar';
 
 const Home = () => {
@@ -110,6 +111,7 @@ const Home = () => {
               />
             </div>
           </div>
+          <InformationRow />
           <div className='contact-us col-lg-6 text-center txt-md-left'>
             <h1 className='display-4 font-weight-bold mb-3'>Contact Us</h1>
             <form className='contact-form'>
