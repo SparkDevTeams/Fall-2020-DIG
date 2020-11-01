@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { buildAnswers } from '../utils';
 import questions from '../assets/questions';
 
 const Questionnaire = () => {
@@ -7,24 +8,16 @@ const Questionnaire = () => {
   const [score, setScore] = useState({});
 
   const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
-
-  const buildAnswers = (question, itemIndex) => {
-    const { ans, type } = question;
-    if (type === 'multipleChoice') {
-      return ans.map((answer, i) => {
-        return (
-          <button
-            key={i}
-            onClick={() => setScore({ ...score, [itemIndex]: answer.value })}
-          >
-            {answer.ans}
-          </button>
-        );
-      });
-    } else if (type === 'slider') {
-      return <h1>Slider!</h1>;
+    if (e.target.classList.contains('next')) {
+      if (score[14] > -1) {
+        alert('You are done');
+      } else if (score[selectedIndex - 1] > -1) {
+        setIndex(selectedIndex);
+      } else {
+        alert('You must select an answer!');
+      }
+    } else if (e.target.classList.contains('prev')) {
+      setIndex(selectedIndex);
     }
   };
 
@@ -34,7 +27,7 @@ const Questionnaire = () => {
     return (
       <Carousel.Item key={i}>
         <h2>{question.ques}</h2>
-        {buildAnswers(question, i)}
+        {buildAnswers(question, i, score, setScore)}
       </Carousel.Item>
     );
   });
@@ -52,11 +45,21 @@ const Questionnaire = () => {
               activeIndex={index}
               onSelect={handleSelect}
               interval={null}
-              nextIcon={<div className='py-3 px-5 btn btn-primary'>Next</div>}
-              prevIcon={<div className='py-3 px-5 btn btn-primary'>Back</div>}
+              nextIcon={
+                <div className='py-3 px-5 btn btn-primary next'>
+                  {index === 14 ? 'Submit' : 'Next'}
+                </div>
+              }
+              prevIcon={
+                index === 0 ? (
+                  ''
+                ) : (
+                  <div className='py-3 px-5 btn btn-primary prev'>Back</div>
+                )
+              }
               bsPrefix='c-carousel'
-              wrap={false}
               indicators={true}
+              style={{ minHeight: 475 + 'px' }}
             >
               {htmlOfItems}
             </Carousel>

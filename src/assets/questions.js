@@ -200,14 +200,28 @@ const questions = [
   },
   {
     ques: 'On average, how much do you commute to school?',
-    ans: ['Less than 5 blocks', 'Next town over'],
+    ans: ['Less than 1 mile', 'More than 10 miles'],
     type: 'slider',
   },
   {
     ques: "When you're brush your teeth, do you leave the water running?",
     ans: [
       {
-        value: 5,
+        value: 0,
+        ans: 'Yes',
+      },
+      {
+        value: 10,
+        ans: 'No',
+      },
+    ],
+    type: 'multipleChoice',
+  },
+  {
+    ques: 'This is an empty question',
+    ans: [
+      {
+        value: 10,
         ans: 'Yes',
       },
       {
