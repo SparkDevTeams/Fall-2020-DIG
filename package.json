@@ -2,7 +2,7 @@
   "name": "DIG",
   "version": "1.0.0",
   "description": "Fall 2020 Dream In Green Project",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
@@ -23,7 +23,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.12"
+    "sass": "^1.27.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",

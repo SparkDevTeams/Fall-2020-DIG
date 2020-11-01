@@ -1,77 +1,39 @@
 import React from 'react';
-import Footer from '../components/Footer';
 import InformationRow from '../components/InformationRow';
-import NavBar from '../components/Navbar';
+import Carousel from 'react-bootstrap/Carousel';
+import ContactUsForm from '../components/ContactUsForm';
+
+import homeImgFir from '../images/girl-earth.svg';
+import homeImgSec from '../images/contact-us-image.svg';
 
 const Home = () => {
   return (
     <div>
-      <NavBar />
+      <Carousel indicators={false}>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src='https://via.placeholder.com/350x150'
+            alt='First slide'
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src='https://via.placeholder.com/350x150'
+            alt='Third slide'
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src='https://via.placeholder.com/350x150'
+            alt='Third slide'
+          />
+        </Carousel.Item>
+      </Carousel>
       <div className='container'>
-        <div
-          id='carouselExampleIndicators'
-          className='carousel slide mb-5'
-          data-ride='carousel'
-        >
-          <ol className='carousel-indicators'>
-            <li
-              data-target='#carouselExampleIndicators'
-              data-slide-to='0'
-              className='active'
-            ></li>
-            <li data-target='#carouselExampleIndicators' data-slide-to='1'></li>
-            <li data-target='#carouselExampleIndicators' data-slide-to='2'></li>
-          </ol>
-          <div className='carousel-inner'>
-            <div className='carousel-item active'>
-              <img
-                className='d-block w-100'
-                src='https://via.placeholder.com/350x150'
-                alt='First slide'
-              />
-            </div>
-            <div className='carousel-item'>
-              <img
-                className='d-block w-100'
-                src='https://via.placeholder.com/350x150'
-                alt='Second slide'
-              />
-            </div>
-            <div className='carousel-item'>
-              <img
-                className='d-block w-100'
-                src='https://via.placeholder.com/350x150'
-                alt='Third slide'
-              />
-            </div>
-          </div>
-          <a
-            className='carousel-control-prev'
-            href='#carouselExampleIndicators'
-            role='button'
-            data-slide='prev'
-          >
-            <span
-              className='carousel-control-prev-icon'
-              aria-hidden='true'
-            ></span>
-            <span className='sr-only'>Previous</span>
-          </a>
-          <a
-            className='carousel-control-next'
-            href='#carouselExampleIndicators'
-            role='button'
-            data-slide='next'
-          >
-            <span
-              className='carousel-control-next-icon'
-              aria-hidden='true'
-            ></span>
-            <span className='sr-only'>Next</span>
-          </a>
-        </div>
-
-        <div className='row mb-5 hero-row-reverse-mobile'>
+        <div className='row mb-5 mt-5 hero-row-reverse-mobile'>
           <div className='col-lg-6 text-center txt-md-left'>
             <div className='row mb-5'>
               <h1 className='display-4 font-weight-bold'>
@@ -79,9 +41,10 @@ const Home = () => {
               </h1>
             </div>
             <p className='lead'>
-              Dream in Green teamed up with Sparkdev and Microsoft to build this
-              easy to use application so that kids all over the word can keep
-              track of their emissions and learn to be better citizens.
+              Dream in Green teamed up with SparkDev and Microsoft to build this
+              easy to use application so that kids from all over the world can
+              learn about their impact on the environment and how to create a
+              better world.
             </p>
             <button
               type='button'
@@ -93,65 +56,18 @@ const Home = () => {
           <div className='col-lg-6'>
             <div className='hero-img-right'>
               <img
-                src='./images/girl-earth.svg'
+                src={homeImgFir}
                 className='fluid-img'
                 alt='Sitting on questionnaire'
               />
             </div>
           </div>
         </div>
-
-        <div className='row mb-5'>
-          <div className='col-lg-6'>
-            <div className='hero-img-left'>
-              <img
-                src='images/contact-us-image.svg'
-                className='fluid-img'
-                alt='Woman holding envelope'
-              />
-            </div>
-          </div>
-          <InformationRow />
-          <div className='contact-us col-lg-6 text-center txt-md-left'>
-            <h1 className='display-4 font-weight-bold mb-3'>Contact Us</h1>
-            <form className='contact-form'>
-              <div className='form-group row'>
-                <label htmlFor='name' className='col-sm-2 col-form-label'>
-                  Name
-                </label>
-                <input type='text' className='col-sm-9 form-control' />
-              </div>
-              <div className='form-group row'>
-                <label htmlFor='email' className='col-sm-2 col-form-label'>
-                  Email
-                </label>
-                <input type='text' className='col-sm-9 form-control' />
-              </div>
-              <div className='form-group row'>
-                <label htmlFor='message' className='col-sm-2 col-form-label'>
-                  Message
-                </label>
-                <textarea className='col-sm-9 form-control' rows='3' />
-              </div>
-              <div className='form-group row'>
-                <label
-                  htmlFor='button-offset'
-                  className='col-sm-2 col-form-label font-weight-bold'
-                ></label>
-                <div className='col-sm-9'>
-                  <button
-                    type='button'
-                    className='btn btn-primary my-2 my-lg-0 py-1 px-5'
-                  >
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+        <InformationRow />
+        <div>
+          <ContactUsForm />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
