@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import TipsContainer from '../components/TipsContainer';
 import { buildAnswers } from '../utils';
 import questions from '../assets/questions';
 
@@ -36,7 +37,9 @@ const Questionnaire = () => {
     <div>
       <div className='container-fluid'>
         <div className='row questionnaire-row'>
-          <div className='col-lg-6 questionnaire-left'></div>
+          <div className='col-lg-6 questionnaire-left'>
+            <TipsContainer index={index} />
+          </div>
           <div className='col-lg-6 px-md-5 questionnaire-right'>
             <h2 className='questionnaire-step-counter'>
               Question {index + 1} of 15
