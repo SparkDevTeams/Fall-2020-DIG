@@ -8,6 +8,9 @@ export const buildAnswers = (question, itemIndex, score, setScore) => {
         <button
           key={i}
           onClick={() => setScore({ ...score, [itemIndex]: answer.value })}
+          className={`multipleChoice-btn ${
+            score[itemIndex] === answer.value ? 'active' : ''
+          }`}
         >
           {answer.ans}
         </button>

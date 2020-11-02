@@ -26,7 +26,7 @@ const Questionnaire = () => {
   const htmlOfItems = questions.map((question, i) => {
     return (
       <Carousel.Item key={i}>
-        <h2>{question.ques}</h2>
+        <h2 className='question-title'>{question.ques}</h2>
         {buildAnswers(question, i, score, setScore)}
       </Carousel.Item>
     );

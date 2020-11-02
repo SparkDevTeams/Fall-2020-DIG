@@ -24,7 +24,7 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 
 .c-carousel {
   position: relative;
-  padding-top: 50px;
+  padding-top: 4rem;
 }
 
 .c-carousel.pointer-event {
@@ -160,4 +160,83 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   font-size: 18px;
   margin-top: 40px;
   margin-bottom: 0;
+}
+
+.question-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    line-height: 1.175;
+    margin-bottom: 3rem;
+  }
+}
+
+.multipleChoice-btn {
+  padding: 11px 16px 11px 50px;
+  cursor: pointer;
+  background-color: lighten(theme-color('primary'), 10%);
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.25;
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  color: #fff;
+  transition: background-color 0.6s ease;
+
+  &.active {
+    font-weight: bold;
+    background: theme-color('primary');
+  }
+
+  &:hover,
+  &:focus {
+    background: theme-color('primary');
+    outline: none;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
+  // fake radio button
+  &::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    border: 1px solid #c6c6c6;
+    border-radius: 100%;
+    background: #fff;
+    pointer-events: none;
+  }
+
+  // fake radio button inside
+  &::after {
+    content: '';
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.active::after,
+  &:hover::after,
+  &:focus::after {
+    width: 7px;
+    height: 7px;
+    background: theme-color('primary');
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    transition: opacity 0.6s ease;
+    opacity: 1;
+  }
 }
