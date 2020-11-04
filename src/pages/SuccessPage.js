@@ -38,7 +38,7 @@ const successPage = () => {
   <Row>
     <Col></Col>
     <Col xs={3} align='center'>
-      <div classname='success-score-text'>
+      <div className='success-score-text'>
         <h3>Check your Score!!!</h3>
       </div>
     
@@ -48,7 +48,7 @@ const successPage = () => {
   <Row>
     <Col></Col>
     <Col xs={6} align='center' >
-      <Card classname='card-points' border='primary' style={{width: '18rem'}}>
+      <Card className='card-points' border='primary' style={{width: '18rem'}}>
         <Card.Body>75/100</Card.Body>
       </Card>
     </Col>
@@ -72,7 +72,7 @@ const successPage = () => {
             Energy Tips
           </Accordion.Toggle>
         </Card.Header>
-        <Accordion.Collapse eventKey="0" classname='accordion-section'>
+        <Accordion.Collapse eventKey="0" className='accordion-section'>
           <Card.Body>
             <h6>Switch lights off!</h6>
             <p>When leaving the room turn off the lights and unplug electronic devices when they are not in use.</p>
