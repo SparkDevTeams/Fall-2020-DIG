@@ -68,7 +68,7 @@ const successPage = () => {
     <Accordion className='accordion-section'>
       <Card className='card-section'>
         <Card.Header>
-          <Accordion.Toggle variant="link" eventKey="0">
+          <Accordion.Toggle variant="link"  eventKey="0">
             Energy Tips
           </Accordion.Toggle>
         </Card.Header>
@@ -98,7 +98,10 @@ const successPage = () => {
           </Card.Body>
         </Accordion.Collapse>
         <Accordion.Collapse eventKey="1">
-          <Card.Body></Card.Body>
+          <Card.Body>
+            <h6>Turn off the water while brushing your teeth</h6>
+            <p>Before brushing, wet your brush and fill a glass for rinsing your mouth. </p>
+          </Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className='card-section'>
