@@ -12,7 +12,6 @@
   width: 100%;
   justify-content: space-around;
   margin: 40px 0;
-  
 
   .image-container {
     width: 200px;
@@ -23,53 +22,31 @@
       background-repeat: no-repeat;
 
       &.monitor {
-        background-image: url("/images/nature_on_screen.svg");
+        background-image: url('/images/nature_on_screen.svg');
       }
 
       &.learn {
-        background-image: url("/images/book_love.svg");
+        background-image: url('/images/book_love.svg');
       }
 
       &.improve {
-        background-image: url("/images/superhero.svg");
+        background-image: url('/images/superhero.svg');
       }
     }
 
     .title {
-      font-family: DM Sans;
-      font-style: normal;
       font-weight: bold;
       font-size: 24px;
       line-height: 36px;
       text-align: center;
-      letter-spacing: -0.750316px;
     }
 
     .text {
-      font-family: Mulish;
-      font-style: normal;
       font-weight: normal;
       font-size: 16px;
       line-height: 24px;
       text-align: center;
-      letter-spacing: -0.500211px;
     }
-  }
-}
-
-.nav-bar-logo {
-  max-width: 200px;
-}
-
-.btn {
-  border-radius: 10px;
-  transition: box-shadow 0.2s, transform 0.2s, background 0.2s,
-    border-radius 0.2s;
-
-  &:hover {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-    transform: translateY(-6px);
-    border-radius: 5px;
   }
 }
 
