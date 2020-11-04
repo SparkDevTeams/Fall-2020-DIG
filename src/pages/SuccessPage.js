@@ -113,6 +113,12 @@ const successPage = () => {
             <p>Plan your meals ahead of time, freeze the excess and reuse leftovers.</p>
           </Card.Body>
         </Accordion.Collapse>
+        <Accordion.Collapse eventKey="2">
+          <Card.Body>
+            <h6>Eat low on the food chain</h6>
+            <p>This means eating mostly fruits, veggies, grains, and beans. </p>
+          </Card.Body>
+        </Accordion.Collapse>
       </Card>
 </Accordion>
  
