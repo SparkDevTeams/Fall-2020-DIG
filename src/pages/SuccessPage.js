@@ -38,18 +38,19 @@ const successPage = () => {
   <Row>
     <Col></Col>
     <Col xs={3} align='center'>
-      <div className='success-score-text'>
-        <h3>Check Your Score!!!</h3>
+      <div classname='success-score-text'>
+        <h3>Check your Score!!!</h3>
       </div>
+    
     </Col>
     <Col></Col>
   </Row>
   <Row>
     <Col></Col>
-    <Col xs={6} align='center'>
-      <div className='success-points'>
-        <h1 className='points'>75/100</h1>
-      </div>
+    <Col xs={6} align='center' >
+      <Card classname='card-points' border='primary' style={{width: '18rem'}}>
+        <Card.Body>75/100</Card.Body>
+      </Card>
     </Col>
     <Col></Col>
   </Row>
@@ -72,10 +73,16 @@ const successPage = () => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0" classname='accordion-section'>
-          <Card.Body>Energy Tip 1</Card.Body>
+          <Card.Body>
+            <h6>Switch lights off!</h6>
+            <p>When leaving the room turn off the lights and unplug electronic devices when they are not in use.</p>
+          </Card.Body>
         </Accordion.Collapse>
         <Accordion.Collapse eventKey="0">
-          <Card.Body>Energy Tip 2</Card.Body>
+          <Card.Body><h6>Lower your thermostat in winter and raise it in summer.</h6> 
+            <p>Use less air conditioning in the summer; instead opt for fans, which require less electricity. 
+              And check out these other ways to beat the heat without air conditioning.</p>
+          </Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className='card-section'>
@@ -85,10 +92,13 @@ const successPage = () => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">
-          <Card.Body><h6>Water 1</h6></Card.Body>
+          <Card.Body>
+              <h6>Take shorter showers</h6>
+              <p>A typical shower uses five to ten gallons of water a minute. Limit your showers to the time it takes to soap up, wash down and rise off. </p> 
+          </Card.Body>
         </Accordion.Collapse>
         <Accordion.Collapse eventKey="1">
-          <Card.Body>Text for water tip 1 </Card.Body>
+          <Card.Body></Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card className='card-section'>
@@ -98,7 +108,10 @@ const successPage = () => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="2">
-          <Card.Body>Waste 1</Card.Body>
+          <Card.Body>
+            <h6>Reduce your food waste</h6>
+            <p>Plan your meals ahead of time, freeze the excess and reuse leftovers.</p>
+          </Card.Body>
         </Accordion.Collapse>
       </Card>
 </Accordion>
