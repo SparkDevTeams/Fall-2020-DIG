@@ -1,6 +1,6 @@
 const questions = [
   {
-    ques: "It's a nice and sunny day outside, do you...:",
+    ques: "It's a nice and sunny day outside, do you...",
     ans: [
       {
         value: 0,
@@ -15,7 +15,7 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'You just finished drinking a water bottle, do you...:',
+    ques: 'You just finished drinking a water bottle, do you...',
     ans: [
       {
         value: 0,
@@ -29,7 +29,7 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'Your phone/tablet is starting to get a little too slow, do you...:',
+    ques: 'Your phone/tablet is starting to get a little too slow, do you...',
     ans: [
       {
         value: 10,
@@ -63,22 +63,30 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'Today is one of the hottest days in the year! Do you...:',
+    ques: 'On average how long are your shower', // switch this to time spent in shower change to slider
     ans: [
       {
         value: 0,
-        ans: "Take a hot shower, I can't stand the water when it's cold!",
+        ans: '20+ minutes',
+      },
+      {
+        value: 5,
+        ans: '15',
+      },
+      {
+        value: 7,
+        ans: '10 minute',
       },
       {
         value: 10,
-        ans: "Take a cold shower, it's pretty hot after all.",
+        ans: '5 minutes',
       },
     ],
     type: 'multipleChoice',
   },
   {
     ques:
-      "It's time for you and your other friends to go to your best friend's house! Do you...:",
+      "It's time for you and your other friends to go to your best friend's house! Do you...",
     ans: [
       {
         value: 0,
@@ -97,10 +105,10 @@ const questions = [
   },
   {
     ques:
-      "You got a new clothes! But you have some older ones you don't wear anymore, do you...:",
+      "You got new clothes! But you have some older ones you don't wear anymore, do you...:",
     ans: [
       {
-        value: 8,
+        value: 0,
         ans: "Toss the old ones out, they're probably too old anyway...",
       },
       {
@@ -112,20 +120,19 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques:
-      'How many electronic devices do you own (smartphones, tablets, gaming consoles, computers, etc)',
+    ques: 'On average how long do use your devices for',
     ans: [
       {
         value: 10,
-        ans: 'Less than 2',
+        ans: 'Less than 8 hours',
       },
       {
         value: 5,
-        ans: 'Between 2 and 4',
+        ans: 'between 8 and 12 hours',
       },
       {
         value: 0,
-        ans: 'More than 5',
+        ans: 'More than 12',
       },
     ],
     type: 'multipleChoice',
@@ -153,14 +160,14 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'When your parent get groceries, do they...:',
+    ques: 'When your parent get groceries, do they...',
     ans: [
       {
-        value: 4,
+        value: 0,
         ans: 'Buy from big chains',
       },
       {
-        value: 7,
+        value: 5,
         ans: 'Smaller family owned supermarkets',
       },
       {
@@ -195,16 +202,16 @@ const questions = [
   },
   {
     ques: 'On average, how long do you keep the lights on in a day?',
-    ans: ['Only when using the room', 'All day'],
+    ans: ['0', '24'],
     type: 'slider',
   },
   {
-    ques: 'On average, how much do you commute to school?',
+    ques: 'On average, how much do you commute to school and/or work?',
     ans: ['Less than 1 mile', 'More than 10 miles'],
     type: 'slider',
   },
   {
-    ques: "When you're brush your teeth, do you leave the water running?",
+    ques: 'When you brush your teeth, do you leave the water running?',
     ans: [
       {
         value: 0,
@@ -218,15 +225,19 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'This is an empty question',
+    ques: 'Its Saturday and you need new clothes do you...',
     ans: [
       {
         value: 10,
-        ans: 'Yes',
+        ans: 'I go to my local second hand store',
+      },
+      {
+        value: 5,
+        ans: 'I go to a local shop near me',
       },
       {
         value: 0,
-        ans: 'No',
+        ans: 'I buy online',
       },
     ],
     type: 'multipleChoice',
