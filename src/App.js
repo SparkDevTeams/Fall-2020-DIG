@@ -7,8 +7,10 @@ import Tips from './pages/Tips';
 import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
+import firebaseConn from './assets/firebase';
 
 const App = () => {
+  console.log(firebaseConn)
   return (
     <Router>
       <NavBar />
