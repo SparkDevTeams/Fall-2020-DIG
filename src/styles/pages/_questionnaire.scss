@@ -165,11 +165,10 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 .question-title {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 
   @include media-breakpoint-up(lg) {
     line-height: 1.175;
-    margin-bottom: 3rem;
   }
 }
 

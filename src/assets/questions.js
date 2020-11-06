@@ -1,5 +1,10 @@
 const questions = [
   {
+    ques: 'TEST SLIDER',
+    ans: ['5 minutes', '20 minutes'],
+    type: 'slider',
+  },
+  {
     ques: "It's a nice and sunny day outside, do you...",
     ans: [
       {
@@ -63,26 +68,9 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'On average how long are your shower', // switch this to time spent in shower change to slider
-    ans: [
-      {
-        value: 0,
-        ans: '20+ minutes',
-      },
-      {
-        value: 5,
-        ans: '15',
-      },
-      {
-        value: 7,
-        ans: '10 minute',
-      },
-      {
-        value: 10,
-        ans: '5 minutes',
-      },
-    ],
-    type: 'multipleChoice',
+    ques: 'On average how long are your showers',
+    ans: ['5 minutes', '20 minutes'],
+    type: 'slider',
   },
   {
     ques:
