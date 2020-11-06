@@ -8,35 +8,36 @@ import Tips from './pages/Tips';
 import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
-import firebaseConn from './assets/firebase';
+import { UserProvider } from './states/userState';
 
 const App = () => {
-  console.log(firebaseConn)
   return (
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/log-in'>
-          <LogIn />
-        </Route>
-        <Route path='/sign-up'>
-          <SignUp />
-        </Route>
-        <Route path='/questionnaire'>
-          <Questionnaire />
-        </Route>
-        <Route path='/tips'>
-          <Tips />
-        </Route>
-        <Route path='/profile'>
-          <Profile />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
+    <UserProvider>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/log-in'>
+            <LogIn />
+          </Route>
+          <Route path='/sign-up'>
+            <SignUp />
+          </Route>
+          <Route path='/questionnaire'>
+            <Questionnaire />
+          </Route>
+          <Route path='/tips'>
+            <Tips />
+          </Route>
+          <Route path='/profile'>
+            <Profile />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </UserProvider>
   );
 };
 
