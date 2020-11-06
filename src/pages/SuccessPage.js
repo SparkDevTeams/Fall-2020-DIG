@@ -39,7 +39,7 @@ const successPage = () => {
     <Col></Col>
     <Col xs={3} align='center'>
       <div className='success-score-text'>
-        <h3>Check your Score!!!</h3>
+        <p>Check your Score!!!</p>
       </div>
     
     </Col>
@@ -67,57 +67,51 @@ const successPage = () => {
     <Col>
 
     <Accordion className='accordion-section'>
-      <Card>
-        <Card.Header>
-          <Accordion.Toggle variant="link"  eventKey="0" style={{ backgroundColor: '#3d9e67', borderColor: '#000000', color:'#ffffff' }}>
+      <Card className='accordion-section'>
+          <Accordion.Toggle as={Card.Header}  eventKey="0" className="mb-1">
             Energy Tips
           </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="0" className='accordion-section'>
+        <Accordion.Collapse eventKey="0" className='accordion-tips'>
           <Card.Body>
             <h6>Switch lights off!</h6>
             <p>When leaving the room turn off the lights and unplug electronic devices when they are not in use.</p>
           </Card.Body>
         </Accordion.Collapse>
-        <Accordion.Collapse eventKey="0">
+        <Accordion.Collapse eventKey="0" className='accordion-tips'>
           <Card.Body><h6>Lower your thermostat in winter and raise it in summer.</h6> 
             <p>Use less air conditioning in the summer; instead opt for fans, which require less electricity. 
               And check out these other ways to beat the heat without air conditioning.</p>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
-      <Card >
-        <Card.Header>
-          <Accordion.Toggle variant="link" eventKey="1" style={{ backgroundColor: '#3d9e67', borderColor: '#000000', color:'#ffffff' }}>
+      <Card className='accordion-section'>
+          <Accordion.Toggle as={Card.Header} eventKey="1" className="mb-1">
             Water Tips
           </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="1">
+        <Accordion.Collapse eventKey="1" className='accordion-tips'>
           <Card.Body>
               <h6>Take shorter showers</h6>
               <p>A typical shower uses five to ten gallons of water a minute. Limit your showers to the time it takes to soap up, wash down and rise off.</p>
           </Card.Body>
         </Accordion.Collapse>
-        <Accordion.Collapse eventKey="1">
+        <Accordion.Collapse eventKey="1" className='accordion-tips'>
           <Card.Body>
             <h6>Turn off the water while brushing your teeth</h6>
             <p>Before brushing, wet your brush and fill a glass for rinsing your mouth. </p>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
-      <Card className='card-section'>
-        <Card.Header>
-          <Accordion.Toggle variant="link" eventKey="2" style={{ backgroundColor: '#3d9e67', borderColor: '#000000', color:'#ffffff' }}>
+      <Card className='accordion-section'>
+        <Accordion.Toggle as={Card.Header} eventKey="2" >
             Waste Tips
           </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="2">
+        <Accordion.Collapse eventKey="2" className='accordion-tips'>
           <Card.Body>
             <h6>Reduce your food waste</h6>
             <p>Plan your meals ahead of time, freeze the excess and reuse leftovers.</p>
           </Card.Body>
         </Accordion.Collapse>
-        <Accordion.Collapse eventKey="2">
+        <Accordion.Collapse eventKey="2" className='accordion-tips'>
           <Card.Body>
             <h6>Eat low on the food chain</h6>
             <p>This means eating mostly fruits, veggies, grains, and beans. </p>

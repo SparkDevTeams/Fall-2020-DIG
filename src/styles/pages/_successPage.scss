@@ -8,8 +8,10 @@
     justify-content: center;
     margin-bottom: 12em;
     color: white;
-    border-radius: 1em;
+    border-style: groove;
     background-color: #3d9e67;
+    text-transform: capitalize;
+   
      
   }
   
@@ -46,6 +48,25 @@
     
   }
   
+  .card-header button {
+    background-color: #3d9e67;
+    color:  white;
+    box-shadow: 3px 5px grey ;
+     
+    }
+
+ 
+  .accordion-section {
+    color: black;
+    font-weight: 900;
+    
+  }
+
+  .accordion-tips {
+    background-color: white;
+    color: black;
+  }
+
   
   
   
