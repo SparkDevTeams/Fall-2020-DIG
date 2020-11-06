@@ -65,10 +65,11 @@ const successPage = () => {
   </Row>
   <Row>
     <Col>
+
     <Accordion className='accordion-section'>
-      <Card className='card-section'>
+      <Card>
         <Card.Header>
-          <Accordion.Toggle variant="link"  eventKey="0">
+          <Accordion.Toggle variant="link"  eventKey="0" style={{ backgroundColor: '#3d9e67', borderColor: '#000000', color:'#ffffff' }}>
             Energy Tips
           </Accordion.Toggle>
         </Card.Header>
@@ -85,16 +86,16 @@ const successPage = () => {
           </Card.Body>
         </Accordion.Collapse>
       </Card>
-      <Card className='card-section'>
+      <Card >
         <Card.Header>
-          <Accordion.Toggle variant="link" eventKey="1">
+          <Accordion.Toggle variant="link" eventKey="1" style={{ backgroundColor: '#3d9e67', borderColor: '#000000', color:'#ffffff' }}>
             Water Tips
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">
           <Card.Body>
               <h6>Take shorter showers</h6>
-              <p>A typical shower uses five to ten gallons of water a minute. Limit your showers to the time it takes to soap up, wash down and rise off. </p> 
+              <p>A typical shower uses five to ten gallons of water a minute. Limit your showers to the time it takes to soap up, wash down and rise off.</p>
           </Card.Body>
         </Accordion.Collapse>
         <Accordion.Collapse eventKey="1">
@@ -106,7 +107,7 @@ const successPage = () => {
       </Card>
       <Card className='card-section'>
         <Card.Header>
-          <Accordion.Toggle variant="link" eventKey="2">
+          <Accordion.Toggle variant="link" eventKey="2" style={{ backgroundColor: '#3d9e67', borderColor: '#000000', color:'#ffffff' }}>
             Waste Tips
           </Accordion.Toggle>
         </Card.Header>
