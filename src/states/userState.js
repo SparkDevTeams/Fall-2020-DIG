@@ -13,6 +13,11 @@ export function UserProvider({children}) {
 
   //state to keep track of the user as they sign-up/log-in
   const [user, setUser] = useState()
+  
+  //this state lets firebase check if a user has logged in before and can help us render
+  //certain components correctly, if there is user already then we redirect to the questionnarre
+  //otherwise we render the log-in/sign-up page
+  const [loading, setLoading] = useState(true)
 
   //sign up through firebase api
   function signup(email, password){
@@ -25,22 +30,27 @@ export function UserProvider({children}) {
   useEffect(() => {
     const unsub = auth.onAuthStateChanged(user => {
       setUser(user)
+      setLoading(false)
     })
 
     return unsub;
-  },[])
-  
+  },[]) 
+
+  function login(email, password){
+    return auth.signInWithEmailAndPassword(email, password)
+  }
+
   //useContext state to keep track of, where we also store useful functions and the user
   const defaultValue ={
     user,
     signup,
-    //login,
+    login,
     //logout
   }
 
   return(
     <userContext.Provider value={defaultValue}>
-      {children}
+      {!loading && children}
     </userContext.Provider>
   );
 };

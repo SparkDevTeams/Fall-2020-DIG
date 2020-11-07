@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Form from 'react-bootstrap/Form';
 import { useAuth } from '../states/userState';
 import Alert from 'react-bootstrap/Alert';
@@ -12,14 +12,20 @@ const SignUp = () => {
   const passwordConfirmRef = useRef();
 
   //pull the signup function from the Context using a hook we made
-  const { signup, user } = useAuth();
+  const { signup } = useAuth();
 
-  //
-  const [error, setError] = useState("")
+  //state to keep track of current error to display to the user
+  const [error, setError] = useState("");
+
+  //loading state to make sure that user does not accidentally try to make more than one
+  //user while the current code for signing up is running
+  const[loading, setLoading] = useState(false);
+
+  //hook that lets us redirct user to a given page using push()
+  const redirect = useHistory();
 
   //function to get all values from the form and try to make an account for the user
   function handleSignUp(event){
-    console.log(user.email)
     event.preventDefault()
     
     //check that none of the feilds are empty
@@ -38,14 +44,19 @@ const SignUp = () => {
     //there is a problem here, the handleSignUp function needs to be async so that
     //we can wait for the signup API call to finish and check for any errors
     //something is restricting that, otherwise this works
+    setLoading(true)
     try{
       //is all self check are working then we can pass the arguements to the firebase API
       setError("")
       signup(emailRef.current.value, passwordRef.current.value)
+
+      //if the sign up is successful then we can redirect to the questionnarre
+      redirect.push("/questionnaire")
     }
     catch (exception){
       setError("Failed to create account")
     }
+    setLoading(false)
   }
 
   return (
@@ -72,7 +83,7 @@ const SignUp = () => {
             placeholder='Confirm Password'
             ref={passwordConfirmRef}
           />
-          <button type='submit' className='btn btn-secondary mt-3 mb-2 btn-block'>
+          <button type='submit' disabled={loading} className='btn btn-secondary mt-3 mb-2 btn-block'>
             Sign Up
           </button>
           <div className="text-center">
