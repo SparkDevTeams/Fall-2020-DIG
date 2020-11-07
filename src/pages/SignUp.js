@@ -37,7 +37,6 @@ const SignUp = () => {
 
     //if the passwords do not match then state an error
     if(passwordRef.current.value !== passwordConfirmRef.current.value){
-      console.log(passwordRef.current.value)
       return setError("Passwords do not match")
     }
     

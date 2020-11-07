@@ -13,7 +13,7 @@ export function UserProvider({children}) {
 
   //state to keep track of the user as they sign-up/log-in
   const [user, setUser] = useState()
-  
+
   //this state lets firebase check if a user has logged in before and can help us render
   //certain components correctly, if there is user already then we redirect to the questionnarre
   //otherwise we render the log-in/sign-up page
@@ -40,12 +40,17 @@ export function UserProvider({children}) {
     return auth.signInWithEmailAndPassword(email, password)
   }
 
+  //these function all return promises so we need a way to wait for their result
+  function logout(){
+    return auth.signOut()
+  }
+
   //useContext state to keep track of, where we also store useful functions and the user
   const defaultValue ={
     user,
     signup,
     login,
-    //logout
+    logout
   }
 
   return(

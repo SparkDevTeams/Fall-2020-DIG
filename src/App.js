@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
-import Questionnaire from './pages/Questionnaire';
 import Tips from './pages/Tips';
 import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 import { UserProvider } from './states/userState';
+import AuthRoute from './components/AuthRoute';
 
 const App = () => {
+
   return (
     <UserProvider>
       <Router>
@@ -25,9 +26,7 @@ const App = () => {
           <Route path='/sign-up'>
             <SignUp />
           </Route>
-          <Route path='/questionnaire'>
-            <Questionnaire />
-          </Route>
+          <AuthRoute path='/questionnaire' />
           <Route path='/tips'>
             <Tips />
           </Route>
