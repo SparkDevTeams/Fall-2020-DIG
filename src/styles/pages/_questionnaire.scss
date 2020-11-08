@@ -190,7 +190,6 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   text-align: center;
 
   &.active {
-    font-weight: 600;
     background: theme-color('primary');
   }
 
@@ -240,4 +239,32 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
     transition: opacity 0.6s ease;
     opacity: 1;
   }
+}
+
+// Tips
+.tips-image {
+  text-align: center;
+}
+
+.tips-copy {
+  padding: 1.5rem;
+}
+
+.tips-copy__title {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.questionnaire-left .carousel-inner {
+  height: 100%;
+}
+
+.questionnaire-left .carousel-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2rem;
 }
