@@ -1,10 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 
 import successImg from '../images/success-image.svg';
 
 const SuccessPage = () => {
+  const { score } = useParams();
   return (
     <div className='container-fluid'>
       <div className='success-hero'>
@@ -22,7 +24,7 @@ const SuccessPage = () => {
         <p>Check your Score!!!</p>
       </div>
       <div className='success-score-box'>
-        <p>75/150</p>
+        <p>{score}/150</p>
       </div>
       <div className='tips-text'>
         <h4>Check these tips to improve your score</h4>
