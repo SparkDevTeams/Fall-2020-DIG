@@ -62,7 +62,7 @@ const Questionnaire = () => {
               }
               bsPrefix='c-carousel'
               indicators={true}
-              style={{ minHeight: 475 + 'px' }}
+              style={{ minHeight: 500 + 'px' }}
             >
               {htmlOfItems}
             </Carousel>

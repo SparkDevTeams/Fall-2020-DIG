@@ -20,6 +20,10 @@ export const buildAnswers = (question, questionIndex, score, setScore) => {
   } else if (type === 'slider') {
     return (
       <div className='slider-wrapper'>
+        <div className='slider-header'>
+          <h3 className='slider-header__left'>{ans[0]}</h3>
+          <h3 className='slider-header__right'>{ans[1]}</h3>
+        </div>
         <Slider
           min={0}
           max={10}

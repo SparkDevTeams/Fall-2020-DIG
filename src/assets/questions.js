@@ -1,10 +1,5 @@
 const questions = [
   {
-    ques: 'TEST SLIDER',
-    ans: ['5 minutes', '20 minutes'],
-    type: 'slider',
-  },
-  {
     ques: "It's a nice and sunny day outside, do you...",
     ans: [
       {
@@ -190,7 +185,7 @@ const questions = [
   },
   {
     ques: 'On average, how long do you keep the lights on in a day?',
-    ans: ['0', '24'],
+    ans: ['0 hours', '24 hours'],
     type: 'slider',
   },
   {

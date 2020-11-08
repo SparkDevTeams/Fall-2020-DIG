@@ -3,6 +3,16 @@
   padding-right: 1rem;
 }
 
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-header__left,
+.slider-header__right {
+  font-size: 1rem;
+}
+
 .rc-slider {
   position: relative;
   height: 30px;
