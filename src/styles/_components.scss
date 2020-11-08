@@ -1,3 +1,55 @@
+// Bootstrap components
+.display-4 {
+  line-height: 0.98;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.25rem;
+  }
+}
+
+.row-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 40px 0;
+
+  .image-container {
+    width: 200px;
+
+    .image {
+      width: 206px;
+      height: 168px;
+      background-repeat: no-repeat;
+
+      &.monitor {
+        background-image: url('/images/nature_on_screen.svg');
+      }
+
+      &.learn {
+        background-image: url('/images/book_love.svg');
+      }
+
+      &.improve {
+        background-image: url('/images/superhero.svg');
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: center;
+    }
+
+    .text {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}
+
 // Custom Components
 .hero-img-right {
   @include media-breakpoint-down(lg) {
@@ -126,12 +178,6 @@
   border-top: 1px solid theme-color('primary');
   width: 100%;
   padding: 1.25rem 1.25rem 0rem 1.25rem;
-}
-
-.profile-card-text-btm {
-  border-top: 1px solid theme-color('primary');
-  width: 100%;
-  padding: 1.25rem;
 }
 
 .profile-center-container {

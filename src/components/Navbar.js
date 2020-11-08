@@ -1,12 +1,33 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 import logoImg from '../images/dig-logo.png';
 
 const NavBar = () => {
-  const [activeKey, setActiveKey] = useState(0);
+  const [activeKey, setActiveKey] = useState(-1);
+
+  const location = useLocation();
+
+  //the home page contact form picture col needs to be set col-lg-6 so that it wraps correctly
+  useEffect(() => {
+    if(location.pathname.startsWith("/questionnaire")){
+      setActiveKey(1);
+    }
+    else if(location.pathname.startsWith("/tips")){
+      setActiveKey(2);
+    }
+    else if(location.pathname.startsWith("/profile")){
+      setActiveKey(3);
+    }
+    else if(location.pathname == "/"){
+      setActiveKey(0);
+    }
+    else{
+      setActiveKey(-1);
+    }
+  },[location]);
 
   return (
     <Navbar expand='lg'>

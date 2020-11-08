@@ -1,4 +1,5 @@
 import React from 'react';
+import InformationRow from '../components/InformationRow';
 import Carousel from 'react-bootstrap/Carousel';
 import ContactUsForm from '../components/ContactUsForm';
 
@@ -62,6 +63,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <InformationRow />
         <div>
           <ContactUsForm />
         </div>

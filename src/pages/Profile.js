@@ -19,19 +19,19 @@ const Profile = () => {
                 School: Kendale Lakes Elementary <br />
                 Grade: 5th
               </Card.Text>
-              <Card.Text className='profile-card-text-btm'>
+              <Card.Text className='profile-card-text'>
                 Last Survey Taken: October 10th, 2020<br />
                 Number of Survey's Taken: 12<br/>
                 Average Score: 78 points<br />
-                <div className='profile-center-container'>
-                  <button
-                    type='button'
-                    className='btn btn-primary mt-3 py-2 px-5'
-                  >
-                    Take Survey
-                  </button>
-                </div>
               </Card.Text>
+              <div className='profile-center-container'>
+                <button
+                  type='button'
+                  className='btn btn-primary py-2 px-5 mb-3'
+                >
+                  Take Survey
+                </button>
+              </div>
           </Card>
         </div>
 
