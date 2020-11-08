@@ -37,9 +37,6 @@ const NavBar = () => {
             <Nav.Link as={Link} to='/profile' eventKey={3}>
               Profile
             </Nav.Link>
-            <Nav.Link as={Link} to='/success' eventKey={4}>
-              SuccessPage
-            </Nav.Link>
           </Nav>
           <Link to='/log-in' className='btn btn-primary my-2 my-lg-0 py-3 px-5'>
             Get Started
