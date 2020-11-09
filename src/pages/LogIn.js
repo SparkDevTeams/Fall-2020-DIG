@@ -14,7 +14,7 @@ const LogIn = () => {
   const [loading, setLoading] = useState(false);
   const redirect = useHistory()
 
-  function handleLogIn(event){
+  async function handleLogIn(event){
     event.preventDefault()
 
     if(passwordRef.current.value === "" ||
@@ -25,7 +25,7 @@ const LogIn = () => {
     setLoading(true)
     try{
       setError("")
-      login(emailRef.current.value, passwordRef.current.value)
+      await login(emailRef.current.value, passwordRef.current.value)
       redirect.push("/questionnaire")
     }
     catch (exception){
