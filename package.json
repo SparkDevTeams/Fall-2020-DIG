@@ -33,5 +33,8 @@
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "browserslist": [
+    "last 3 Chrome versions"
+  ]
 }
