@@ -55,8 +55,8 @@ const SignUp = () => {
       redirect.push('/questionnaire');
     } catch (e) {
       setError('Failed to create account');
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   return (

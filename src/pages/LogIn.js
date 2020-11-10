@@ -27,8 +27,8 @@ const LogIn = () => {
       redirect.push('/questionnaire');
     } catch (e) {
       setError('Failed to sign in');
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   return (
