@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import TipsContainer from '../components/TipsContainer';
 import { buildAnswers } from '../utils';
@@ -7,11 +8,22 @@ import questions from '../assets/questions';
 const Questionnaire = () => {
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState({});
+  let history = useHistory();
+
+  const handleFinish = () => {
+    let total = 0;
+
+    for (const key in score) {
+      total += score[key];
+    }
+
+    history.push(`/success/${total}`);
+  };
 
   const handleSelect = (selectedIndex, e) => {
     if (e.target.classList.contains('next')) {
       if (score[14] > -1) {
-        alert('You are done');
+        handleFinish();
       } else if (score[selectedIndex - 1] > -1) {
         setIndex(selectedIndex);
       } else {
@@ -62,7 +74,7 @@ const Questionnaire = () => {
               }
               bsPrefix='c-carousel'
               indicators={true}
-              style={{ minHeight: 475 + 'px' }}
+              style={{ minHeight: 500 + 'px' }}
             >
               {htmlOfItems}
             </Carousel>
