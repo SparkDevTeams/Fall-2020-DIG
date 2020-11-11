@@ -3,9 +3,19 @@ import Image from 'react-bootstrap/Image';
 import defaultProfile from '../images/default-profile-img.jpg';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
-
+import { useAuth } from '../states/userState';
+import { useHistory } from 'react-router-dom';
 
 const Profile = () => {
+
+  const { logout } = useAuth()
+  const redirect = useHistory()
+
+  function handleLogOut(){
+    logout()
+    redirect.push("/")
+  }
+
   return (
     <div className='container mw-100'>
       <div className='row profile-container'>
@@ -14,6 +24,13 @@ const Profile = () => {
           <Card className='profile-card' border="primary">
             <Image className='profile-image' src={defaultProfile} roundedCircle/>
             <Card.Title>Maria Vasquez</Card.Title>
+            <button
+              type='button'
+              className='btn btn-primary py-2 px-5 mb-3'
+              onClick={handleLogOut}
+            >
+              Log Out
+            </button>
               <Card.Text className='profile-card-text'>
                 Username: Mari123<br />
                 School: Kendale Lakes Elementary <br />
