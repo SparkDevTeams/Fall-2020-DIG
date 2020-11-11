@@ -25,6 +25,7 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 .c-carousel {
   position: relative;
   padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .c-carousel.pointer-event {
@@ -165,20 +166,19 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 .question-title {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 
   @include media-breakpoint-up(lg) {
     line-height: 1.175;
-    margin-bottom: 3rem;
   }
 }
 
 .multipleChoice-btn {
-  padding: 11px 16px 11px 50px;
+  padding: 15px 70px;
   cursor: pointer;
   background-color: lighten(theme-color('primary'), 10%);
-  border: 1px solid #c6c6c6;
-  border-radius: 5px;
+  border: none;
+  border-radius: 95px;
   font-size: 16px;
   line-height: 1.25;
   position: relative;
@@ -187,9 +187,9 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   width: 100%;
   color: #fff;
   transition: background-color 0.6s ease;
+  text-align: center;
 
   &.active {
-    font-weight: bold;
     background: theme-color('primary');
   }
 
@@ -207,11 +207,11 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   &::before {
     content: '';
     position: absolute;
-    left: 22px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    width: 13px;
-    height: 13px;
+    width: 26px;
+    height: 26px;
     border: 1px solid #c6c6c6;
     border-radius: 100%;
     background: #fff;
@@ -228,15 +228,43 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   &.active::after,
   &:hover::after,
   &:focus::after {
-    width: 7px;
-    height: 7px;
+    width: 20px;
+    height: 20px;
     background: theme-color('primary');
     position: absolute;
-    left: 25px;
+    left: 17px;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 100%;
     transition: opacity 0.6s ease;
     opacity: 1;
   }
+}
+
+// Tips
+.tips-image {
+  text-align: center;
+}
+
+.tips-copy {
+  padding: 1.5rem;
+}
+
+.tips-copy__title {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.questionnaire-left .carousel-inner {
+  height: 100%;
+}
+
+.questionnaire-left .carousel-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2rem;
 }
