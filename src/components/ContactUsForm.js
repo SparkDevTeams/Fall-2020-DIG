@@ -2,7 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 import Button from 'react-bootstrap/Button';
 import contactUsFormImg from '../images/contact-us-image.svg';
 
@@ -10,7 +10,7 @@ const ContactUsForm = () => {
   return (
     <Container>
       <Row>
-        <Col>
+        <div className='col-lg-6'>
           <div className='hero-img-left'>
             <img
               src={contactUsFormImg}
@@ -18,8 +18,8 @@ const ContactUsForm = () => {
               alt='Woman holding envelope'
             />
           </div>
-        </Col>
-        <Col>
+        </div>
+        <div className='col-lg-6'>
           <h1 className='display-4 font-weight-bold mb-3'>Contact Us</h1>
           <Form>
             <Form.Group controlId='formGroupName'>
@@ -51,7 +51,7 @@ const ContactUsForm = () => {
               Submit
             </Button>
           </div>
-        </Col>
+        </div>
       </Row>
     </Container>
   );

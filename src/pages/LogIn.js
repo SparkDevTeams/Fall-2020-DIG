@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../components/Footer';
 
 const LogIn = () => {
   return (
@@ -24,7 +23,6 @@ const LogIn = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

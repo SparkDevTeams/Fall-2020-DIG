@@ -1,3 +1,55 @@
+// Bootstrap components
+.display-4 {
+  line-height: 0.98;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.25rem;
+  }
+}
+
+.row-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 40px 0;
+
+  .image-container {
+    width: 200px;
+
+    .image {
+      width: 206px;
+      height: 168px;
+      background-repeat: no-repeat;
+
+      &.monitor {
+        background-image: url('/images/nature_on_screen.svg');
+      }
+
+      &.learn {
+        background-image: url('/images/book_love.svg');
+      }
+
+      &.improve {
+        background-image: url('/images/superhero.svg');
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: center;
+    }
+
+    .text {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}
+
 // Custom Components
 .hero-img-right {
   @include media-breakpoint-down(lg) {
@@ -17,6 +69,10 @@
   @include media-breakpoint-up(lg) {
     padding-right: 80px;
   }
+}
+
+.navbar-collapse {
+  text-align: center;
 }
 
 .contact-us label {
@@ -53,9 +109,7 @@
   align-items: center;
   justify-content: center;
   background-color: theme-color('primary');
-  margin-top: -1rem;
-  margin-bottom: -20px;
-  height: calc(100vh - 108px - 116px);
+  min-height: calc(100vh - 87px - 127px);
 }
 
 .log-in-form {
@@ -74,31 +128,69 @@
   }
 }
 
-// Survey Page
-.survey-page {
-  margin-bottom: -2rem;
+.footer__logo {
+  width: 150px;
 }
 
-.question-container {
-  padding: 3.75rem 3rem;
+.accordion {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
 }
 
-.left-side {
-  background-color: theme-color('primary');
-}
-
-.tips-container__img {
-  width: 20rem;
-  margin: 0 auto;
-}
-
-.tips-container__title {
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.tips-container__text {
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }
 
 // End of Survey Page
+
+.table th,
+.table td {
+  padding: 0.5rem;
+}
+
+.profile-container {
+  margin: auto;
+  max-width: 1000px;
+  min-height: calc(-215px + 100vh);
+  justify-content: center;
+}
+
+.profile-card {
+  align-items: center;
+}
+
+.profile-image {
+  height: 150px;
+  width: 150px;
+}
+
+.profile-card-text {
+  border-top: 1px solid theme-color('primary');
+  width: 100%;
+  padding: 1.25rem 1.25rem 0rem 1.25rem;
+}
+
+.profile-center-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-user-col {
+  max-width: 360px;
+  min-width: 320px;
+}
+
+.profile-table-col {
+  max-width: 570px;
+  min-width: 320px;
+}

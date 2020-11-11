@@ -1,22 +1,16 @@
-import React from "react";
-import Footer from "../components/Footer";
-import NavBar from "../components/Navbar";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/esm/Row";
-
+import React from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
 const Tips = () => {
   return (
     <div>
-      <NavBar />
-
-      <Accordion defaultActiveKey="0">
+      <Accordion defaultActiveKey='0'>
         <Card>
-          <Accordion.Toggle as={Card.Header} eventKey="0">
+          <Accordion.Toggle as={Card.Header} eventKey='0'>
             Transportation
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="0">
+          <Accordion.Collapse eventKey='0'>
             <Card.Body>
               🍃 Reduce the amount of times you drive. Consider talking, taking
               public transportation, carpooling or riding a bike to your
@@ -32,10 +26,10 @@ const Tips = () => {
         </Card>
 
         <Card>
-          <Accordion.Toggle as={Card.Header} eventKey="1">
+          <Accordion.Toggle as={Card.Header} eventKey='1'>
             Household
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="1">
+          <Accordion.Collapse eventKey='1'>
             <Card.Body>
               🍃 Consider using LED lightbulbs instead of the traditional ones.
               LED bulbs may cost more but they use a quarter of the energy of
@@ -48,10 +42,10 @@ const Tips = () => {
         </Card>
 
         <Card>
-          <Accordion.Toggle as={Card.Header} eventKey="2">
+          <Accordion.Toggle as={Card.Header} eventKey='2'>
             Food
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="2">
+          <Accordion.Collapse eventKey='2'>
             <Card.Body>
               🍃 Reduce the amount of food you waste by planning your meals
               ahead of time, freezing any leftovers, and reusing any leftovers
@@ -66,10 +60,10 @@ const Tips = () => {
         </Card>
 
         <Card>
-          <Accordion.Toggle as={Card.Header} eventKey="3">
+          <Accordion.Toggle as={Card.Header} eventKey='3'>
             Shopping
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="3">
+          <Accordion.Collapse eventKey='3'>
             <Card.Body>
               🍃 Reduce the amount of stuff you purchase and consider using
               recycled items when possible.
@@ -82,10 +76,10 @@ const Tips = () => {
         </Card>
 
         <Card>
-          <Accordion.Toggle as={Card.Header} eventKey="4">
+          <Accordion.Toggle as={Card.Header} eventKey='4'>
             Clothing
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="4">
+          <Accordion.Collapse eventKey='4'>
             <Card.Body>
               🍃 Washing your clothes in cold water could save up to 500 pounds
               of carbon dioxide. Using cold water instead of hot/warm water can
@@ -98,8 +92,6 @@ const Tips = () => {
           </Accordion.Collapse>
         </Card>
       </Accordion>
-
-      <Footer />
     </div>
   );
 };

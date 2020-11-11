@@ -2,5 +2,11 @@
 @import 'bootstrap';
 @import 'base';
 @import 'objects';
+
+// Pages
+@import './pages/questionnaire';
+
+// Components
 @import 'components';
+
 @import 'utilities';
