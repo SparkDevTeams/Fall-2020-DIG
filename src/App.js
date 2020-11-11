@@ -4,11 +4,20 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import Questionnaire from './pages/Questionnaire';
 import Tips from './pages/Tips';
-import Points from './pages/SuccessPage';
+import SuccessPage from './pages/SuccessPage';
 import Profile from './pages/Profile';
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 
+const NoMatchPage = () => {
+  return (
+    <div
+      style={{ textAlign: 'center', minHeight: 'calc(100vh - 87px - 127px)' }}
+    >
+      <h3 style={{ paddingTop: '3rem' }}>404 - Not found</h3>
+    </div>
+  );
+};
 
 const App = () => {
   return (
@@ -27,12 +36,13 @@ const App = () => {
         <Route path='/tips'>
           <Tips />
         </Route>
-        <Route path='/success'>
-          <Points />
+        <Route path='/success/:score'>
+          <SuccessPage />
         </Route>
         <Route path='/profile'>
           <Profile />
         </Route>
+        <Route component={NoMatchPage} />
       </Switch>
       <Footer />
     </Router>
