@@ -7,12 +7,19 @@
   .success-score-text {
     justify-content: center;
     margin-bottom: 12em;
+    display: flex;
     color: white;
-    border-style: groove;
+    border-style: solid #3d9e67 2px ;
     background-color: #3d9e67;
     text-transform: capitalize;
-   
-     
+    text-align: center;
+    align-items: center;
+        
+  }
+  
+  .score-p {
+    text-align: center;
+    vertical-align: middle;
   }
   
   .success-points {
@@ -22,7 +29,7 @@
     justify-items: normal;
     height: 80px;
     width: 250px;
-    border: solid black 4px;
+    border: solid #3d9e67 4px;
     border-radius: 2px;
   }
   
@@ -33,7 +40,10 @@
   
   .tips-text {
     margin-bottom: 3em;
-    margin-top: 3em;
+    margin-top: 8em;
+    border-radius: 1rem;
+   
+  
   }
   
   .score-carousel {
@@ -46,12 +56,12 @@
   .card-section {
     background-color: transparent;
     
-  }
+  } 
   
   .card-header button {
     background-color: #3d9e67;
     color:  white;
-    box-shadow: 3px 5px grey ;
+    
      
     }
 
@@ -59,7 +69,7 @@
   .accordion-section {
     color: black;
     font-weight: 900;
-    
+    width: inherit;
   }
 
   .accordion-tips {

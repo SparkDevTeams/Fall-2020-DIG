@@ -39,7 +39,7 @@ const successPage = () => {
     <Col></Col>
     <Col xs={3} align='center'>
       <div className='success-score-text'>
-        <p>Check your Score!!!</p>
+        <p className='score-p'>Check your Score!!!</p>
       </div>
     
     </Col>
@@ -58,7 +58,7 @@ const successPage = () => {
     <Col></Col>
     <Col xs={6} align='center'>
       <div className='tips-text'>
-        <h4>Check these tips to improve your score</h4>
+        <h4>Check these tips to improve your score 📗</h4>
       </div>
     </Col>
     <Col></Col>
@@ -69,7 +69,7 @@ const successPage = () => {
     <Accordion className='accordion-section'>
       <Card className='accordion-section'>
           <Accordion.Toggle as={Card.Header}  eventKey="0" className="mb-1">
-            Energy Tips
+          ☀️ Energy Tips
           </Accordion.Toggle>
         <Accordion.Collapse eventKey="0" className='accordion-tips'>
           <Card.Body>
@@ -86,7 +86,7 @@ const successPage = () => {
       </Card>
       <Card className='accordion-section'>
           <Accordion.Toggle as={Card.Header} eventKey="1" className="mb-1">
-            Water Tips
+          💧 Water Tips
           </Accordion.Toggle>
         <Accordion.Collapse eventKey="1" className='accordion-tips'>
           <Card.Body>
@@ -103,7 +103,7 @@ const successPage = () => {
       </Card>
       <Card className='accordion-section'>
         <Accordion.Toggle as={Card.Header} eventKey="2" >
-            Waste Tips
+        🗑️ Waste Tips
           </Accordion.Toggle>
         <Accordion.Collapse eventKey="2" className='accordion-tips'>
           <Card.Body>
