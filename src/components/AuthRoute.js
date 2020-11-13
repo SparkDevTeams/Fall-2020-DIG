@@ -1,7 +1,7 @@
-import React from "react";
-import { Redirect, Route } from "react-router-dom";
-import Questionnaire from "../pages/Questionnaire";
-import { useAuth } from "../states/userState"
+import React from 'react';
+import { Redirect, Route } from 'react-router-dom';
+import Questionnaire from '../pages/Questionnaire';
+import { useAuth } from '../states/userState';
 
 /*this component is needed so that we can choose to route between two
 other components, the reason this does not work in App.js
@@ -11,14 +11,13 @@ then for App.js the state will be null from its point of view
 since this component is nested within, useAuth has loaded correctly */
 
 export default function AuthRoute() {
-
   const { user } = useAuth();
-
-  return(
+  return (
     <Route
-    render={() => {
-      user && console.log(user.email)
-      return user ? <Questionnaire /> : <Redirect to="/log-in" />
-    }}></Route>
-  )
+      render={() => {
+        user && console.log(user.email);
+        return user ? <Questionnaire /> : <Redirect to='/log-in' />;
+      }}
+    ></Route>
+  );
 }
