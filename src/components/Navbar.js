@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import { useAuth } from  '../states/userState';
 
 import logoImg from '../images/dig-logo.png';
 
 const NavBar = () => {
+
   const [activeKey, setActiveKey] = useState(-1);
 
   const location = useLocation();
+
+  const { user } = useAuth();
 
   //the home page contact form picture col needs to be set col-lg-6 so that it wraps correctly
   useEffect(() => {
@@ -55,11 +59,13 @@ const NavBar = () => {
             <Nav.Link as={Link} to='/tips' eventKey={2}>
               Tips
             </Nav.Link>
+            {user &&
             <Nav.Link as={Link} to='/profile' eventKey={3}>
               Profile
             </Nav.Link>
+            }
           </Nav>
-          <Link to='/log-in' className='btn btn-primary my-2 my-lg-0 py-3 px-5'>
+          <Link to='/questionnaire' className='btn btn-primary my-2 my-lg-0 py-3 px-5'>
             Get Started
           </Link>
         </Navbar.Collapse>
