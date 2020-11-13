@@ -1,6 +1,5 @@
 import React from 'react';
 import InformationRow from '../components/InformationRow';
-import Carousel from 'react-bootstrap/Carousel';
 import ContactUsForm from '../components/ContactUsForm';
 
 import homeImgFir from '../images/girl-earth.svg';

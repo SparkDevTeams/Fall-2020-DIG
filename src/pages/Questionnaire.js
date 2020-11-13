@@ -4,7 +4,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import TipsContainer from '../components/TipsContainer';
 import { buildAnswers } from '../utils';
 import questions from '../assets/questions';
-import tips from '../assets/tips';
 
 const Questionnaire = () => {
   const [index, setIndex] = useState(0);
