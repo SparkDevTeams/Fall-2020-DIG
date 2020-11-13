@@ -3,6 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import { useAuth } from '../states/userState';
 import Alert from 'react-bootstrap/Alert';
+import { Row, Col } from 'react-bootstrap';
+import logoImg from '../images/dig-logo.png';
 
 const SignUp = () => {
   //variables to keep track of input
@@ -63,33 +65,82 @@ const SignUp = () => {
     <div className='log-in-container'>
       <div className='log-in-form'>
         <Form onSubmit={handleSignUp} className='form-group mb-2'>
+          <div style={{display:"flex", justifyContent:"center"}}>
+            <img
+              src={logoImg}
+              className='nav-bar-logo'
+              alt='Dream In Green logo'
+            />
+          </div>
           <h3 className='mb-2 text-center font-weight-bold'>Sign Up</h3>
           {error && <Alert variant='danger'>{error}</Alert>}
-          <Form.Control
-            type='email'
-            className='form-control mb-2'
-            placeholder='Email'
-            ref={emailRef}
-          />
-          <Form.Control
-            type='password'
-            className='form-control mb-2'
-            placeholder='Password'
-            ref={passwordRef}
-          />
-          <Form.Control
-            type='password'
-            className='form-control mb-2'
-            placeholder='Confirm Password'
-            ref={passwordConfirmRef}
-          />
-          <button
-            type='submit'
-            disabled={loading}
-            className='btn btn-secondary mt-3 mb-2 btn-block'
-          >
-            Sign Up
-          </button>
+          <Row>
+            <Col className="pr-0">
+              <Form.Group className="mb-0">
+                <Form.Label className="mb-0">Email:</Form.Label>
+                <Form.Control
+                  type='email'
+                  className='form-control mb-2'
+                  placeholder='Email'
+                  ref={emailRef}
+                />
+              </Form.Group>
+              <Form.Group className="mb-0">
+                <Form.Label className="mb-0">Passord:</Form.Label>
+                <Form.Control
+                  type='password'
+                  className='form-control mb-2'
+                  placeholder='Password'
+                  ref={passwordRef}
+                />
+              </Form.Group>
+              <Form.Group className="mb-0">
+                <Form.Label className="mb-0">Confirm Password:</Form.Label>
+                <Form.Control
+                  type='password'
+                  className='form-control mb-2'
+                  placeholder='Confirm Password'
+                  ref={passwordConfirmRef}
+                />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-0">
+                <Form.Label className="mb-0">First Name:</Form.Label>
+                <Form.Control
+                  type='text'
+                  className='form-control mb-2'
+                  placeholder='First Name'
+                />
+              </Form.Group>
+              <Form.Group className="mb-0">
+                <Form.Label className="mb-0">Last Name</Form.Label>
+                <Form.Control
+                  type='text'
+                  className='form-control mb-2'
+                  placeholder='Last Name'
+                />
+              </Form.Group>
+              <Form.Group className="mb-0">
+                <Form.Label className="mb-0">School/Work:</Form.Label>
+                <Form.Control
+                  type='text'
+                  className='form-control mb-2'
+                  placeholder='School/Work'
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <div style={{display:"flex", justifyContent:"center"}}>
+            <button
+              type='submit'
+              disabled={loading}
+              className='btn btn-secondary mt-3 mb-2 btn-block'
+              style={{maxWidth:"50%"}}
+            >
+              Sign Up
+            </button>
+          </div>
           <div className='text-center'>
             Already have an account? <Link to='/log-in'>Log In</Link>
           </div>

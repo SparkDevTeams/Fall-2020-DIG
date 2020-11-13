@@ -32,9 +32,8 @@ const Profile = () => {
               Log Out
             </button>
               <Card.Text className='profile-card-text'>
-                Username: Mari123<br />
+                Email: Mari123@gmail.com<br />
                 School: Kendale Lakes Elementary <br />
-                Grade: 5th
               </Card.Text>
               <Card.Text className='profile-card-text'>
                 Last Survey Taken: October 10th, 2020<br />
