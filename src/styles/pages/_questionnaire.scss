@@ -244,6 +244,11 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 // Tips
 .tips-image {
   text-align: center;
+  padding: 1rem;
+
+  img {
+    max-height: 30rem;
+  }
 }
 
 .tips-copy {
@@ -255,16 +260,4 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   font-size: 1.125rem;
   line-height: 1.4;
   margin: 0;
-}
-
-.questionnaire-left .carousel-inner {
-  height: 100%;
-}
-
-.questionnaire-left .carousel-item {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 2rem;
 }
