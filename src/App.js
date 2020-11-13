@@ -10,6 +10,7 @@ import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 import { UserProvider } from './states/userState';
 import AuthRoute from './components/AuthRoute';
+import firebase from './firebase';
 
 const NoMatchPage = () => {
   return (
