@@ -2,7 +2,7 @@ import React from 'react';
 
 const InformationRow = () => {
   return (
-    <div className='row-container'>
+    <div className='row-container home-row'>
       <div className='image-container'>
         <div className='image monitor' />
         <div className='title'>Monitor</div>
