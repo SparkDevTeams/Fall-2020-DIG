@@ -18,7 +18,7 @@ const SuccessPage = () => {
       </div>
       <div className='success-text'>
         <h1>YOU DID IT!</h1>
-        <p>Thank you for taking the Survey! </p>
+        <p>Thank you for taking the Questionnaire!</p>
       </div>
       <div className='success-score-banner'>
         <p>Check your Score!!!</p>

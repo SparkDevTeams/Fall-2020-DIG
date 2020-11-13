@@ -51,6 +51,10 @@
 }
 
 // Custom Components
+.home-row {
+  margin-bottom: 5rem;
+}
+
 .hero-img-right {
   @include media-breakpoint-down(lg) {
     margin-bottom: 3rem;
@@ -194,4 +198,3 @@
   max-width: 570px;
   min-width: 320px;
 }
-

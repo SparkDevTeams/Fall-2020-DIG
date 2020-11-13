@@ -4,38 +4,14 @@ import Carousel from 'react-bootstrap/Carousel';
 import ContactUsForm from '../components/ContactUsForm';
 
 import homeImgFir from '../images/girl-earth.svg';
-import homeImgSec from '../images/contact-us-image.svg';
 
 const Home = () => {
   return (
     <div>
-      <Carousel indicators={false}>
-        <Carousel.Item>
-          <img
-            className='d-block w-100'
-            src='https://via.placeholder.com/350x150'
-            alt='First slide'
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className='d-block w-100'
-            src='https://via.placeholder.com/350x150'
-            alt='Third slide'
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className='d-block w-100'
-            src='https://via.placeholder.com/350x150'
-            alt='Third slide'
-          />
-        </Carousel.Item>
-      </Carousel>
       <div className='container'>
-        <div className='row mb-5 mt-5 hero-row-reverse-mobile'>
+        <div className='row mt-5 hero-row-reverse-mobile home-row '>
           <div className='col-lg-6 text-center txt-md-left'>
-            <div className='row mb-5'>
+            <div className='row mb-3'>
               <h1 className='display-4 font-weight-bold'>
                 Monitor your greenhouse emissions
               </h1>
