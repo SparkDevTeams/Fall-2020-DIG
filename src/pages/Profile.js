@@ -4,16 +4,32 @@ import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import { useAuth } from '../states/userState';
+import { firestore } from '../assets/firebase'
 
 import defaultProfileImage from '../images/default-profile-img.jpg';
 
 const Profile = () => {
   const { logout } = useAuth();
   const redirect = useHistory();
+  const usersCollection = firestore.collection('users');
 
   function handleLogOut() {
     logout();
     redirect.push('/');
+  }
+
+  function getData(){
+    usersCollection.doc("test1234").get().then(function(doc) {
+      var scores = doc.data().scores;
+      if(scores)
+      {
+        scores.reverse();
+        console.log(scores);
+      }
+      else
+      {
+        console.log("Empty");
+      }});
   }
 
   return (
@@ -58,67 +74,7 @@ const Profile = () => {
         <div className='col m-3 profile-table-col'>
           <Card className='profile-card' border='primary'>
             <h3 className='mb-0'>Survey History</h3>
-            <Table striped borderless hover className='mb-0'>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Date</th>
-                  <th>Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>12</td>
-                  <td>October 10th 2020</td>
-                  <td>90</td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td>October 2nd 2020</td>
-                  <td>80</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>September 27th 2020</td>
-                  <td>76</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>September 23rd 2020</td>
-                  <td>71</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>September 20th 2020</td>
-                  <td>64</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>September 15th 2020</td>
-                  <td>52</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>September 12th 2020</td>
-                  <td>57</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>September 10th 2020</td>
-                  <td>58</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>September 3rd 2020</td>
-                  <td>51</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>August 28th 2020</td>
-                  <td>45</td>
-                </tr>
-              </tbody>
-            </Table>
+            {getData() && <div>Hello</div>}
           </Card>
         </div>
       </div>
