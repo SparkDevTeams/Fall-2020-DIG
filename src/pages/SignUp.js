@@ -78,7 +78,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className='log-in-container'>
+    <div className='log-in-container fancy-bg'>
       <div className='log-in-form my-4 mx-3'>
         <Form onSubmit={handleSignUp} className='form-group mb-2'>
           <div style={{ display: 'flex', justifyContent: 'center' }}>

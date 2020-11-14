@@ -33,7 +33,7 @@ const LogIn = () => {
   }
 
   return (
-    <div className='log-in-container'>
+    <div className='log-in-container fancy-bg'>
       <Form onSubmit={handleLogIn} className='log-in-form'>
         <div className='form-group mb-2'>
           <div style={{ display: 'flex', justifyContent: 'center' }}>

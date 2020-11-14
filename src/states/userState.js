@@ -75,6 +75,7 @@ export function UserProvider({ children }) {
   //useContext state to keep track of, where we also store useful functions and the user
   const defaultValue = {
     user,
+    usersCollection,
     signup,
     login,
     logout,

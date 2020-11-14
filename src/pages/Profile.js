@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import { useAuth } from '../states/userState';
-import { firestore } from '../assets/firebase';
 
 import defaultProfileImage from '../images/default-profile-img.jpg';
 
 const Profile = () => {
-  const { logout, user } = useAuth();
+  const { logout, user, usersCollection } = useAuth();
   const redirect = useHistory();
-  const usersCollection = firestore.collection('users');
 
-  const [name, setName] = useState("");
-  const [school, setSchool] = useState("");
-  const [last, setLast] = useState("");
+  const [name, setName] = useState('');
+  const [school, setSchool] = useState('');
+  const [last, setLast] = useState('');
   const [avg, setAvg] = useState(0);
   const [scores, setScores] = useState(null);
 
@@ -29,52 +27,62 @@ const Profile = () => {
       .doc(user.uid)
       .get()
       .then(function (doc) {
-        if(doc.data().scores){
-
+        if (doc.data().scores) {
           let arr = doc.data().scores.reverse();
           setScores(arr);
-          setLast(month[arr[0].createdAt.toDate().getMonth()]
-                + " " + arr[0].createdAt.toDate().getDay()
-               + ", " + arr[0].createdAt.toDate().getFullYear());
+          setLast(
+            month[arr[0].createdAt.toDate().getMonth()] +
+              ' ' +
+              arr[0].createdAt.toDate().getDay() +
+              ', ' +
+              arr[0].createdAt.toDate().getFullYear()
+          );
           var sum = 0;
-          for(var i = 0; i < arr.length; i++){
+          for (var i = 0; i < arr.length; i++) {
             sum = sum + arr[i].score;
           }
-          setAvg(sum/arr.length);
-        }
-        else {
+          setAvg((sum / arr.length).toFixed(2));
+        } else {
           setScores(undefined);
-          setLast("N/A")
+          setLast('N/A');
         }
 
-        setName(doc.data().firstName + " " + doc.data().lastName);
+        setName(doc.data().firstName + ' ' + doc.data().lastName);
         setSchool(doc.data().school);
       });
   }, []);
 
-  var month = new Array();
-  month[0] = "January";
-  month[1] = "February";
-  month[2] = "March";
-  month[3] = "April";
-  month[4] = "May";
-  month[5] = "June";
-  month[6] = "July";
-  month[7] = "August";
-  month[8] = "September";
-  month[9] = "October";
-  month[10] = "November";
-  month[11] = "December";
+  const month = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
 
-  const htmlOfScores = (scores != null && scores != undefined) ? scores.slice(0,10).map((score, i) => {
-    return (
-      <tr key={i}>
-        <td>{scores.length - i}</td>
-        <td>{month[score.createdAt.toDate().getMonth()]} {score.createdAt.toDate().getDay()}, {score.createdAt.toDate().getFullYear()}</td>
-        <td>{score.score}</td>
-      </tr>
-    );
-  }) : ("");
+  const htmlOfScores =
+    scores !== null && scores !== undefined
+      ? scores.slice(0, 9).map((score, i) => {
+          return (
+            <tr key={i}>
+              <td>{scores.length - i}</td>
+              <td>
+                {month[score.createdAt.toDate().getMonth()]}{' '}
+                {score.createdAt.toDate().getDay()},{' '}
+                {score.createdAt.toDate().getFullYear()}
+              </td>
+              <td>{score.score}</td>
+            </tr>
+          );
+        })
+      : '';
 
   return (
     <div className='container mw-100'>
@@ -86,7 +94,7 @@ const Profile = () => {
               src={defaultProfileImage}
               roundedCircle
             />
-            <Card.Title>{name}</Card.Title>
+            <h5 className='mt-2 mb-3 text-primary'>{name}</h5>
             <button
               type='button'
               className='btn btn-primary py-2 px-5 mb-3'
@@ -95,36 +103,46 @@ const Profile = () => {
               Log Out
             </button>
             <Card.Text className='profile-card-text'>
-              Email: {user.email}
+              <strong>Email:</strong> {user.email}
               <br />
-              School: {school} <br />
+              <strong>School:</strong> {school} <br />
             </Card.Text>
             <Card.Text className='profile-card-text'>
-              Last Survey Taken: {last}
+              <strong>Last Survey Taken:</strong> {last}
               <br />
-              Number of Survey's Taken: {scores ? scores.length : 0}
+              <strong>Total Survey's Taken:</strong>{' '}
+              {scores ? scores.length : 0}
               <br />
-              Average Score: {avg} points
+              <strong>Average Score:</strong> {avg} points
               <br />
             </Card.Text>
             <div className='profile-center-container'>
-              <button type='button' className='btn btn-primary py-2 px-5 mb-3'>
+              <Link
+                to='/questionnaire'
+                className='btn btn-primary py-2 px-5 mb-3'
+              >
                 Take Survey
-              </button>
+              </Link>
             </div>
           </Card>
         </div>
 
         <div className='col m-3 profile-table-col'>
           <Card className='profile-card' border='primary'>
-            <h3 className='mb-0'>Survey History</h3>
-            {scores &&  <Table striped borderless hover className='mb-0'>
-                          <thead><tr><th>#</th><th>Date</th><th>Score</th></tr></thead>
-                          <tbody>
-                            {htmlOfScores}
-                          </tbody>
-                        </Table>}
-            {scores == undefined && <h1>No scores</h1>}
+            <h3 className='mb-0 text-primary'>Survey History</h3>
+            {scores && (
+              <Table striped borderless hover className='mb-0'>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>{htmlOfScores}</tbody>
+              </Table>
+            )}
+            {scores === undefined && <h1>No scores</h1>}
           </Card>
         </div>
       </div>

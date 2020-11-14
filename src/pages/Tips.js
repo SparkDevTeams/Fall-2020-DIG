@@ -4,11 +4,11 @@ import Card from 'react-bootstrap/Card';
 
 const Tips = () => {
   return (
-    <div className="tips-page-container">
-      <div className="jumbotron jumbotron-fluid tips-jumbotron">
-        <div className="container">
-          <h1 className="display-2">Tips</h1>
-          <p className="lead">
+    <div className='tips-page-container'>
+      <div className='jumbotron jumbotron-fluid tips-jumbotron fancy-bg'>
+        <div className='container'>
+          <h1 className='display-4'>Tips</h1>
+          <p>
             Your carbon footprint is the total amount of greehouse gas emissions
             that come from the production (or use) of a product or service.
             Think of how you chose to travel, the foods you consume, and how
@@ -19,13 +19,13 @@ const Tips = () => {
           </p>
         </div>
       </div>
-      <div className="container">
-        <Accordion defaultActiveKey="0">
+      <div className='container'>
+        <Accordion defaultActiveKey='0'>
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
+            <Accordion.Toggle as={Card.Header} eventKey='0'>
               Transportation
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
+            <Accordion.Collapse eventKey='0'>
               <Card.Body>
                 🍃 Driving less will reduce the amount of CO2 emitted and it
                 will lessen traffic congestion. Consider taking public
@@ -43,10 +43,10 @@ const Tips = () => {
           </Card>
 
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="1">
+            <Accordion.Toggle as={Card.Header} eventKey='1'>
               Household
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey='1'>
               <Card.Body>
                 🍃 Consider using LED lightbulbs instead of regular lightbulbs.
                 LED bulbs may cost more but they use a quarter of the energy
@@ -63,10 +63,10 @@ const Tips = () => {
           </Card>
 
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="2">
+            <Accordion.Toggle as={Card.Header} eventKey='2'>
               Food
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="2">
+            <Accordion.Collapse eventKey='2'>
               <Card.Body>
                 🍃 Reduce the amount of food you waste by planning your meals
                 ahead of time, freezing any leftovers, and reusing any leftovers
@@ -86,10 +86,10 @@ const Tips = () => {
           </Card>
 
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="3">
+            <Accordion.Toggle as={Card.Header} eventKey='3'>
               Shopping
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="3">
+            <Accordion.Collapse eventKey='3'>
               <Card.Body>
                 🍃 Reduce the amount of stuff you purchase and consider using
                 recycled items when possible.
@@ -106,10 +106,10 @@ const Tips = () => {
           </Card>
 
           <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="4">
+            <Accordion.Toggle as={Card.Header} eventKey='4'>
               Clothing
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="4">
+            <Accordion.Collapse eventKey='4'>
               <Card.Body>
                 🍃 Washing your clothes in cold water could save up to 500
                 pounds of carbon dioxide. Using cold water instead of hot/warm

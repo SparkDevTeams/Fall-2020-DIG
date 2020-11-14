@@ -126,21 +126,6 @@
   align-items: center;
   justify-content: center;
   min-height: $full-height;
-  background: linear-gradient(49deg, #3d9e67, #ef6584);
-  background-size: 400% 400%;
-  animation: gradientAnimation 30s ease infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 100% 0%;
-  }
-  50% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
 }
 
 .log-in-logo {
@@ -174,7 +159,6 @@
 
 .accordion {
   background-color: white;
-  color: black;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -182,6 +166,7 @@
   border: none;
   outline: none;
   transition: 0.4s;
+  margin-bottom: 3rem;
 }
 
 .panel {
