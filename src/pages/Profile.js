@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import { useAuth } from '../states/userState';
-import { firestore } from '../assets/firebase'
+import { firestore } from '../assets/firebase';
 
 import defaultProfileImage from '../images/default-profile-img.jpg';
 
@@ -13,24 +13,23 @@ const Profile = () => {
   const redirect = useHistory();
   const usersCollection = firestore.collection('users');
 
+  const [scores, setScores] = useState(null);
+
   function handleLogOut() {
     logout();
     redirect.push('/');
   }
 
-  function getData(){
-    usersCollection.doc("test1234").get().then(function(doc) {
-      var scores = doc.data().scores;
-      if(scores)
-      {
-        scores.reverse();
-        console.log(scores);
-      }
-      else
-      {
-        console.log("Empty");
-      }});
-  }
+  useEffect(() => {
+    usersCollection
+      .doc('test1234')
+      .get()
+      .then(function (doc) {
+        setScores(doc.data().scores);
+      });
+  }, []);
+
+  console.log({ scores });
 
   return (
     <div className='container mw-100'>
@@ -74,7 +73,8 @@ const Profile = () => {
         <div className='col m-3 profile-table-col'>
           <Card className='profile-card' border='primary'>
             <h3 className='mb-0'>Survey History</h3>
-            {getData() && <div>Hello</div>}
+            {scores && <h1>Scores</h1>}
+            {scores === undefined && <h1>No scores</h1>}
           </Card>
         </div>
       </div>
