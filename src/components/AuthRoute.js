@@ -12,6 +12,7 @@ since this component is nested within, useAuth has loaded correctly */
 
 export default function AuthRoute() {
   const { user } = useAuth();
+  console.log(user);
   return (
     <Route
       render={() => {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import TipsContainer from '../components/TipsContainer';
+import { useAuth } from '../states/userState';
 import { buildAnswers } from '../utils';
 import questions from '../assets/questions';
 
@@ -9,12 +10,19 @@ const Questionnaire = () => {
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState({});
   let history = useHistory();
+  const { user, addScoreToDb } = useAuth();
 
-  const handleFinish = () => {
+  const handleFinish = async () => {
     let total = 0;
 
     for (const key in score) {
       total += score[key];
+    }
+
+    try {
+      await addScoreToDb(user.uid, total, new Date());
+    } catch (e) {
+      console.log(e);
     }
 
     history.push(`/success/${total}`);

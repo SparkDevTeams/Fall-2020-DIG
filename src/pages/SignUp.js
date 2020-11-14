@@ -11,9 +11,12 @@ const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const schoolRef = useRef();
 
   //pull the signup function from the Context using a hook we made
-  const { signup } = useAuth();
+  const { signup, registerUser } = useAuth();
 
   //state to keep track of current error to display to the user
   const [error, setError] = useState('');
@@ -33,7 +36,10 @@ const SignUp = () => {
     if (
       passwordRef.current.value === '' ||
       passwordConfirmRef.current.value === '' ||
-      emailRef.current.value == ''
+      emailRef.current.value === '' ||
+      firstNameRef.current.value === '' ||
+      lastNameRef.current.value === '' ||
+      schoolRef.current.value === ''
     ) {
       return setError('Please fill in all fields');
     }
@@ -51,12 +57,22 @@ const SignUp = () => {
       //is all self check are working then we can pass the arguements to the firebase API
       setError('');
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      let response = await signup(
+        emailRef.current.value,
+        passwordRef.current.value
+      );
+
+      registerUser(
+        response.user.uid,
+        firstNameRef.current.value,
+        lastNameRef.current.value,
+        schoolRef.current.value
+      );
 
       //if the sign up is successful then we can redirect to the questionnaire
       redirect.push('/questionnaire');
     } catch (e) {
-      setError('Failed to create account');
+      setError(e.message);
       setLoading(false);
     }
   }
@@ -65,7 +81,7 @@ const SignUp = () => {
     <div className='log-in-container'>
       <div className='log-in-form'>
         <Form onSubmit={handleSignUp} className='form-group mb-2'>
-          <div style={{display:"flex", justifyContent:"center"}}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <img
               src={logoImg}
               className='nav-bar-logo'
@@ -75,9 +91,9 @@ const SignUp = () => {
           <h3 className='mb-2 text-center font-weight-bold'>Sign Up</h3>
           {error && <Alert variant='danger'>{error}</Alert>}
           <Row>
-            <Col className="pr-0">
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Email:</Form.Label>
+            <Col className='pr-0'>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Email:</Form.Label>
                 <Form.Control
                   type='email'
                   className='form-control mb-2'
@@ -85,8 +101,8 @@ const SignUp = () => {
                   ref={emailRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Passord:</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Passord:</Form.Label>
                 <Form.Control
                   type='password'
                   className='form-control mb-2'
@@ -94,8 +110,8 @@ const SignUp = () => {
                   ref={passwordRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Confirm Password:</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Confirm Password:</Form.Label>
                 <Form.Control
                   type='password'
                   className='form-control mb-2'
@@ -105,38 +121,41 @@ const SignUp = () => {
               </Form.Group>
             </Col>
             <Col>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">First Name:</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>First Name:</Form.Label>
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
                   placeholder='First Name'
+                  ref={firstNameRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Last Name</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Last Name</Form.Label>
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
                   placeholder='Last Name'
+                  ref={lastNameRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">School/Work:</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>School/Work:</Form.Label>
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
                   placeholder='School/Work'
+                  ref={schoolRef}
                 />
               </Form.Group>
             </Col>
           </Row>
-          <div style={{display:"flex", justifyContent:"center"}}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <button
               type='submit'
               disabled={loading}
               className='btn btn-secondary mt-3 mb-2 btn-block'
-              style={{maxWidth:"50%"}}
+              style={{ maxWidth: '50%' }}
             >
               Sign Up
             </button>
