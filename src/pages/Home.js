@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import InformationRow from '../components/InformationRow';
 import ContactUsForm from '../components/ContactUsForm';
 
@@ -21,12 +22,12 @@ const Home = () => {
               learn about their impact on the environment and how to create a
               better world.
             </p>
-            <button
-              type='button'
+            <Link
+              to='/questionnaire'
               className='btn btn-primary my-2 my-lg-0 py-3 px-5'
             >
               Get Started
-            </button>
+            </Link>
           </div>
           <div className='col-lg-6'>
             <div className='hero-img-right'>

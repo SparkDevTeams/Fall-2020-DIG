@@ -27,28 +27,26 @@ export function UserProvider({ children }) {
   }
 
   function registerUser(uid, firstName, lastName, school) {
-    alert('in register user');
-    // console.log(firestore.collection);
-    // washingtonRef
-    //   .doc(uid)
-    //   .set({
-    //     firstName,
-    //     lastName,
-    //     school,
-    //   })
-    //   .then(function () {
-    //     console.log('Document successfully written!');
-    //   })
-    //   .catch(function (error) {
-    //     console.error('Error writing document: ', error);
-    //   });
+    usersCollection
+      .doc(uid)
+      .set({
+        firstName,
+        lastName,
+        school,
+      })
+      .then(function () {
+        console.log('Document successfully written!');
+      })
+      .catch(function (error) {
+        console.error('Error writing document: ', error);
+      });
   }
 
   function addScoreToDb(uid, score, createdAt) {
     usersCollection.doc(uid).update({
       scores: firebase.firestore.FieldValue.arrayUnion({
-        score: 5,
-        createdAt: new Date(),
+        score,
+        createdAt,
       }),
     });
   }
@@ -77,6 +75,7 @@ export function UserProvider({ children }) {
   //useContext state to keep track of, where we also store useful functions and the user
   const defaultValue = {
     user,
+    usersCollection,
     signup,
     login,
     logout,

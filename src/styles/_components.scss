@@ -9,12 +9,25 @@
 
 .row-container {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
-  margin: 40px 0;
+  flex-direction: column;
+
+  @include media-breakpoint-down(sm) {
+    align-items: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
   .image-container {
     width: 200px;
+
+    @include media-breakpoint-down(sm) {
+      &:not(:last-child) {
+        margin-bottom: 5rem;
+      }
+    }
 
     .image {
       width: 206px;
@@ -112,14 +125,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: theme-color('primary');
-  min-height: calc(100vh - 87px - 127px);
+  min-height: $full-height;
+}
+
+.log-in-logo {
+  width: 150px;
+}
+
+.log-in-title {
+  color: theme-color('primary');
 }
 
 .log-in-form {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  min-width: 265px;
 }
 
 .footer {
@@ -138,7 +159,6 @@
 
 .accordion {
   background-color: white;
-  color: black;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -146,6 +166,7 @@
   border: none;
   outline: none;
   transition: 0.4s;
+  margin-bottom: 3rem;
 }
 
 .panel {
@@ -165,7 +186,7 @@
 .profile-container {
   margin: auto;
   max-width: 1000px;
-  min-height: calc(-215px + 100vh);
+  min-height: $full-height;
   justify-content: center;
 }
 

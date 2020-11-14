@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import Questionnaire from '../pages/Questionnaire';
 import { useAuth } from '../states/userState';
 
 /*this component is needed so that we can choose to route between two
@@ -10,13 +9,13 @@ and if we try to access the state from above, like we would need to load the sta
 then for App.js the state will be null from its point of view
 since this component is nested within, useAuth has loaded correctly */
 
-export default function AuthRoute() {
+export default function AuthRoute({ component: Component, ...rest }) {
   const { user } = useAuth();
   return (
     <Route
+      {...rest}
       render={() => {
-        user && console.log(user.email);
-        return user ? <Questionnaire /> : <Redirect to='/log-in' />;
+        return user ? <Component /> : <Redirect to='/log-in' />;
       }}
     ></Route>
   );

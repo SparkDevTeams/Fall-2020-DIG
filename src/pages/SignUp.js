@@ -11,9 +11,12 @@ const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const schoolRef = useRef();
 
   //pull the signup function from the Context using a hook we made
-  const { signup } = useAuth();
+  const { signup, registerUser } = useAuth();
 
   //state to keep track of current error to display to the user
   const [error, setError] = useState('');
@@ -33,7 +36,10 @@ const SignUp = () => {
     if (
       passwordRef.current.value === '' ||
       passwordConfirmRef.current.value === '' ||
-      emailRef.current.value == ''
+      emailRef.current.value === '' ||
+      firstNameRef.current.value === '' ||
+      lastNameRef.current.value === '' ||
+      schoolRef.current.value === ''
     ) {
       return setError('Please fill in all fields');
     }
@@ -51,42 +57,54 @@ const SignUp = () => {
       //is all self check are working then we can pass the arguements to the firebase API
       setError('');
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      let response = await signup(
+        emailRef.current.value,
+        passwordRef.current.value
+      );
+
+      registerUser(
+        response.user.uid,
+        firstNameRef.current.value,
+        lastNameRef.current.value,
+        schoolRef.current.value
+      );
 
       //if the sign up is successful then we can redirect to the questionnaire
       redirect.push('/questionnaire');
     } catch (e) {
-      setError('Failed to create account');
+      setError(e.message);
       setLoading(false);
     }
   }
 
   return (
-    <div className='log-in-container'>
-      <div className='log-in-form'>
+    <div className='log-in-container fancy-bg'>
+      <div className='log-in-form my-4 mx-3'>
         <Form onSubmit={handleSignUp} className='form-group mb-2'>
-          <div style={{display:"flex", justifyContent:"center"}}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <img
               src={logoImg}
-              className='nav-bar-logo'
+              className='log-in-logo'
               alt='Dream In Green logo'
             />
           </div>
-          <h3 className='mb-2 text-center font-weight-bold'>Sign Up</h3>
+          <h2 className='mb-2 text-center font-weight-bold log-in-title'>
+            Sign Up
+          </h2>
           {error && <Alert variant='danger'>{error}</Alert>}
           <Row>
-            <Col className="pr-0">
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Email:</Form.Label>
+            <Col xs={12} sm={6} className='pr-sm-2'>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Email:</Form.Label>
                 <Form.Control
                   type='email'
                   className='form-control mb-2'
-                  placeholder='Email'
+                  placeholder='john@email.com'
                   ref={emailRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Passord:</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Passord:</Form.Label>
                 <Form.Control
                   type='password'
                   className='form-control mb-2'
@@ -94,8 +112,8 @@ const SignUp = () => {
                   ref={passwordRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Confirm Password:</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Confirm Password:</Form.Label>
                 <Form.Control
                   type='password'
                   className='form-control mb-2'
@@ -104,39 +122,41 @@ const SignUp = () => {
                 />
               </Form.Group>
             </Col>
-            <Col>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">First Name:</Form.Label>
+            <Col xs={12} sm={6} className='pl-sm-2'>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>First Name:</Form.Label>
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
-                  placeholder='First Name'
+                  placeholder='John'
+                  ref={firstNameRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">Last Name</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>Last Name</Form.Label>
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
-                  placeholder='Last Name'
+                  placeholder='Doe'
+                  ref={lastNameRef}
                 />
               </Form.Group>
-              <Form.Group className="mb-0">
-                <Form.Label className="mb-0">School/Work:</Form.Label>
+              <Form.Group className='mb-0'>
+                <Form.Label className='mb-0'>School/Work:</Form.Label>
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
-                  placeholder='School/Work'
+                  placeholder='FIU'
+                  ref={schoolRef}
                 />
               </Form.Group>
             </Col>
           </Row>
-          <div style={{display:"flex", justifyContent:"center"}}>
+          <div className='text-center'>
             <button
               type='submit'
               disabled={loading}
-              className='btn btn-secondary mt-3 mb-2 btn-block'
-              style={{maxWidth:"50%"}}
+              className='btn btn-primary my-2 py-3 px-5'
             >
               Sign Up
             </button>

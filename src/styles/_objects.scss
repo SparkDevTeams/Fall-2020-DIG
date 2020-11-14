@@ -5,11 +5,8 @@
 }
 
 .success-img {
-  width: 550px;
-  height: 200px;
+  width: 100%;
+  max-width: 550px;
   margin-top: 3em;
   margin-bottom: 1em;
-  -ms-grid-column-align: center;
-
-
 }

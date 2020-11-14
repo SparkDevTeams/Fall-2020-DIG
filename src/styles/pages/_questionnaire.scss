@@ -150,11 +150,17 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 // Non-Bootstrap
 
 .questionnaire-row {
-  min-height: calc(100vh - 87px - 127px);
+  min-height: $full-height;
 }
 
 .questionnaire-left {
   background-color: lighten(theme-color('primary'), 15%);
+}
+
+.questionnaire-right {
+  @include media-breakpoint-down(md) {
+    margin-bottom: 5rem;
+  }
 }
 
 .questionnaire-step-counter {
@@ -187,7 +193,10 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
   width: 100%;
   color: #fff;
   transition: background-color 0.6s ease;
-  text-align: center;
+
+  @include media-breakpoint-down(xs) {
+    padding: 10px 15px 10px 45px;
+  }
 
   &.active {
     background: theme-color('primary');
