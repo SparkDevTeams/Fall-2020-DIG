@@ -9,12 +9,25 @@
 
 .row-container {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
-  margin: 40px 0;
+  flex-direction: column;
+
+  @include media-breakpoint-down(sm) {
+    align-items: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
   .image-container {
     width: 200px;
+
+    @include media-breakpoint-down(sm) {
+      &:not(:last-child) {
+        margin-bottom: 5rem;
+      }
+    }
 
     .image {
       width: 206px;
@@ -112,14 +125,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: theme-color('primary');
   min-height: $full-height;
+  background: linear-gradient(49deg, #3d9e67, #ef6584);
+  background-size: 400% 400%;
+  animation: gradientAnimation 30s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.log-in-logo {
+  width: 150px;
+}
+
+.log-in-title {
+  color: theme-color('primary');
 }
 
 .log-in-form {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  min-width: 265px;
 }
 
 .footer {

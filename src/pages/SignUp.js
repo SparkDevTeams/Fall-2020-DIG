@@ -79,25 +79,27 @@ const SignUp = () => {
 
   return (
     <div className='log-in-container'>
-      <div className='log-in-form'>
+      <div className='log-in-form my-4 mx-3'>
         <Form onSubmit={handleSignUp} className='form-group mb-2'>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <img
               src={logoImg}
-              className='nav-bar-logo'
+              className='log-in-logo'
               alt='Dream In Green logo'
             />
           </div>
-          <h3 className='mb-2 text-center font-weight-bold'>Sign Up</h3>
+          <h2 className='mb-2 text-center font-weight-bold log-in-title'>
+            Sign Up
+          </h2>
           {error && <Alert variant='danger'>{error}</Alert>}
           <Row>
-            <Col className='pr-0'>
+            <Col xs={12} sm={6} className='pr-sm-2'>
               <Form.Group className='mb-0'>
                 <Form.Label className='mb-0'>Email:</Form.Label>
                 <Form.Control
                   type='email'
                   className='form-control mb-2'
-                  placeholder='Email'
+                  placeholder='john@email.com'
                   ref={emailRef}
                 />
               </Form.Group>
@@ -120,13 +122,13 @@ const SignUp = () => {
                 />
               </Form.Group>
             </Col>
-            <Col>
+            <Col xs={12} sm={6} className='pl-sm-2'>
               <Form.Group className='mb-0'>
                 <Form.Label className='mb-0'>First Name:</Form.Label>
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
-                  placeholder='First Name'
+                  placeholder='John'
                   ref={firstNameRef}
                 />
               </Form.Group>
@@ -135,7 +137,7 @@ const SignUp = () => {
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
-                  placeholder='Last Name'
+                  placeholder='Doe'
                   ref={lastNameRef}
                 />
               </Form.Group>
@@ -144,18 +146,17 @@ const SignUp = () => {
                 <Form.Control
                   type='text'
                   className='form-control mb-2'
-                  placeholder='School/Work'
+                  placeholder='FIU'
                   ref={schoolRef}
                 />
               </Form.Group>
             </Col>
           </Row>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className='text-center'>
             <button
               type='submit'
               disabled={loading}
-              className='btn btn-secondary mt-3 mb-2 btn-block'
-              style={{ maxWidth: '50%' }}
+              className='btn btn-primary my-2 py-3 px-5'
             >
               Sign Up
             </button>
