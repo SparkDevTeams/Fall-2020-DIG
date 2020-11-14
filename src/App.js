@@ -10,6 +10,7 @@ import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 import { UserProvider } from './states/userState';
 import AuthRoute from './components/AuthRoute';
+import Questionnaire from './pages/Questionnaire';
 
 const NoMatchPage = () => {
   return (
@@ -36,16 +37,14 @@ const App = () => {
           <Route path='/sign-up'>
             <SignUp />
           </Route>
-          <AuthRoute path='/questionnaire' />
+          <AuthRoute path='/questionnaire' component={Questionnaire} />
           <Route path='/tips'>
             <Tips />
           </Route>
           <Route path='/success/:score'>
             <SuccessPage />
           </Route>
-          <Route path='/profile'>
-            <Profile />
-          </Route>
+          <AuthRoute path='/profile' component={Profile} />
           <Route component={NoMatchPage} />
         </Switch>
         <Footer />
