@@ -42,8 +42,6 @@ const Questionnaire = () => {
     }
   };
 
-  console.log(score);
-
   const htmlOfItems = questions.map((question, i) => {
     return (
       <Carousel.Item key={i}>

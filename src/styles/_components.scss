@@ -113,7 +113,7 @@
   align-items: center;
   justify-content: center;
   background-color: theme-color('primary');
-  min-height: calc(100vh - 87px - 127px);
+  min-height: $full-height;
 }
 
 .log-in-form {
@@ -165,7 +165,7 @@
 .profile-container {
   margin: auto;
   max-width: 1000px;
-  min-height: calc(-215px + 100vh);
+  min-height: $full-height;
   justify-content: center;
 }
 

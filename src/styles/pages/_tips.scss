@@ -1,0 +1,13 @@
+.tips-page-container {
+  min-height: $full-height;
+}
+
+.tips-jumbotron {
+  background: theme-color('primary');
+  background: linear-gradient(
+    63deg,
+    rgba(239, 101, 132, 0.98) 0%,
+    rgba(61, 158, 103, 0.91) 76%
+  );
+  color: white;
+}

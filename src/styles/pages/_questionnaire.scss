@@ -150,7 +150,7 @@ $c-carousel-transition: transform $c-carousel-transition-duration ease-in-out !d
 // Non-Bootstrap
 
 .questionnaire-row {
-  min-height: calc(100vh - 87px - 127px);
+  min-height: $full-height;
 }
 
 .questionnaire-left {
