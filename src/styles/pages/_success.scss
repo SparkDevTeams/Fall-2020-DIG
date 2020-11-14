@@ -64,9 +64,14 @@
 .accordion-section {
   color: black;
   font-weight: 900;
+  font-variant-caps: normal;
   width: inherit;
   justify-content: center;
   text-align: center;
+}
+
+.accordion-tips {
+  text-align: left;
 }
 
 .success-score-banner {
