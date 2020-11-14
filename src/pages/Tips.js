@@ -5,10 +5,12 @@ import Card from 'react-bootstrap/Card';
 const Tips = () => {
   return (
     <div className='tips-page-container'>
-      <div class='jumbotron jumbotron-fluid tips-jumbotron'>
-        <div class='container'>
-          <h1 class='display-4'>Tips 🍃</h1>
-          <p class='lead'>Great tips for living a more eco friendly life.</p>
+      <div className='jumbotron jumbotron-fluid tips-jumbotron'>
+        <div className='container'>
+          <h1 className='display-2'>Tips</h1>
+          <p className='lead'>
+            Great tips for living a more eco friendly life.
+          </p>
         </div>
       </div>
       <div className='container'>

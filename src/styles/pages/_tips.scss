@@ -3,11 +3,32 @@
 }
 
 .tips-jumbotron {
-  background: theme-color('primary');
-  background: linear-gradient(
-    63deg,
-    rgba(239, 101, 132, 0.98) 0%,
-    rgba(61, 158, 103, 0.91) 76%
-  );
+  // background: theme-color('pink');
+  // background: linear-gradient(
+  //   63deg,
+  //   rgba(239, 101, 132, 0.98) 0%,
+  //   rgba(61, 158, 103, 0.91) 76%
+  // );
   color: white;
+
+  h1 {
+    background: linear-gradient(
+      90deg,
+      rgba(239, 101, 132, 0.98) 0%,
+      rgba(61, 158, 103, 0.91) 76%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-weight: 700;
+    background: linear-gradient(
+      90deg,
+      rgba(239, 101, 132, 0.98) 0%,
+      rgba(61, 158, 103, 0.91) 76%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
