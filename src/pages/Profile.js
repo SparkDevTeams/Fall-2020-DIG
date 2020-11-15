@@ -33,7 +33,7 @@ const Profile = () => {
           setLast(
             month[arr[0].createdAt.toDate().getMonth()] +
               ' ' +
-              arr[0].createdAt.toDate().getDay() +
+              arr[0].createdAt.toDate().getDate() +
               ', ' +
               arr[0].createdAt.toDate().getFullYear()
           );
@@ -75,7 +75,7 @@ const Profile = () => {
               <td>{scores.length - i}</td>
               <td>
                 {month[score.createdAt.toDate().getMonth()]}{' '}
-                {score.createdAt.toDate().getDay()},{' '}
+                {score.createdAt.toDate().getDate()},{' '}
                 {score.createdAt.toDate().getFullYear()}
               </td>
               <td>{score.score}</td>
