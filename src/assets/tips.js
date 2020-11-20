@@ -17,37 +17,37 @@ import tip14 from '../images/tips/tip14.svg';
 const tips = [
   {
     tip:
-      'When in constant use electronic devices account for up to 60% of an average american home electric consumption. A great way to reduce this is going outside to play with your friends, turning off electronics at home and turning off the air.',
+      'When in constant use, electronic devices account for up to 60% of an average american home electric consumption. A great way to reduce this is by going outside to play with your friends, turning off electronics at home, and turning off the air conditioner.',
     img: tip0,
   },
   {
     tip:
-      'About 80% of our trash ends up in landfills producing methane as it decomposes. Recycling and reusing items like water bottles and clothing can help drastically reduce your greenhouse gas emissions.el',
+      'About 80% of our trash ends up in landfills which produces methane as it decomposes. Recycling and reusing items like water bottles and clothing can help drastically reduce your greenhouse gas emissions.',
     img: tip1,
   },
   {
     tip:
-      'E-Waste accounts for around 70% of all toxic waste and contains many toxic materials, including mercury, lead, arsenic, and cadmium. The best way to get rid of old devices is by trading them in at electronic recycling centers.',
+      'E-Waste accounts for roughly 70% of all toxic waste and contains many toxic materials, including mercury, lead, arsenic, and cadmium. The best way to get rid of old devices is by trading them in at electronic recycling centers.',
     img: tip2,
   },
   {
     tip:
-      'The Department of Energy states that the cost to light your home is about 20% of your total electric bill. A great way to reduce this footprint is by updating to newer LED bulbs and always making sure you turn off the lights when you leave a room.',
+      'The Department of Energy states that the cost to light your home is about 20% of your total electric bill. A great way to reduce your carbon footprint at home is by updating to newer LED bulbs and always making sure you turn off the lights when you leave a room.',
     img: tip3,
   },
   {
     tip:
-      'By shortening your shower time by three minutes you can reduce the amount of water you use per shower by up to ten gallons. Aim for a five minute shower, planet earth will thank you.',
+      'Shortening your shower time by three minutes can reduce the amount of water you use per shower by up to ten gallons. Aim for a five minute shower, planet earth will thank you.',
     img: tip4,
   },
   {
     tip:
-      "Sharing rides means that everyone involved drives less thus lowering everyone's carbon footprint. Cars are responsible for producing large amounts of carbon dioxide, the heat-trapping gas that causes global warming.",
+      "Sharing rides means that everyone involved drives less, thus lowering everyone's carbon footprint. Cars are responsible for producing large amounts of carbon dioxide, the heat-trapping gas that causes global warming.",
     img: tip5,
   },
   {
     tip:
-      'New apparel production releases 4M tons of harmful carbon emissions annually, contributing more than 8% of global greenhouse emissions. The single best thing we can do for the planet is consume less and reuse more.',
+      'New apparel production releases tons of harmful carbon emissions annually, contributing more than 8% of global greenhouse emissions. The single best thing we can do for the planet is consume less and reuse more.',
     img: tip6,
   },
   {
