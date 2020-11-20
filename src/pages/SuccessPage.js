@@ -18,7 +18,7 @@ const SuccessPage = () => {
       </div>
       <div className='success-text'>
         <h1 className='text-primary'>YOU DID IT!</h1>
-        <p>Thank you for taking the Questionnaire!</p>
+        <p>Thank you for taking the questionnaire!</p>
       </div>
       <div className='success-score-box'>
         <p>{score}/150</p>
@@ -27,7 +27,7 @@ const SuccessPage = () => {
         <p>View Your Progress</p>
       </Link>
       <div className='tips-text'>
-        <h4>Check these tips to improve your score 📗</h4>
+        <h4>Check out these tips and see how you can improve your score 📗</h4>
       </div>
       <Accordion className='pt-0 pb-0'>
         <Card className='accordion-section'>

@@ -4,7 +4,7 @@ const questions = [
     ans: [
       {
         value: 0,
-        ans: "Stay inside it's really hot and the A/C is nice and cold",
+        ans: "Stay inside and turn the air conditioner on.",
       },
       {
         value: 10,
@@ -15,7 +15,7 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'You just finished drinking a water bottle, do you...',
+    ques: 'You just finished drinking a bottle of water, do you...',
     ans: [
       {
         value: 0,
@@ -38,7 +38,7 @@ const questions = [
       {
         value: 5,
         ans:
-          'Get a new one and keep the old one—you never know when you might need it',
+          'Get a new one and keep the old one, you never know when you might need it.',
       },
       {
         value: 0,
@@ -49,7 +49,7 @@ const questions = [
   },
   {
     ques:
-      "You're hungry so you're gonna go to the kitchen to make a sandwich, do you...:",
+      "You go to the kitchen to make yourself a sandwich, do you...",
     ans: [
       {
         value: 0,
@@ -63,17 +63,17 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'On average how long are your showers',
+    ques: 'On average, how long are your showers',
     ans: ['5 minutes', '20 minutes'],
     type: 'slider',
   },
   {
     ques:
-      "It's time for you and your other friends to go to your best friend's house! Do you...",
+      "You and your friends get together to visit someone, do you...",
     ans: [
       {
         value: 0,
-        ans: 'Everyone gets there in their own cars.',
+        ans: 'Each drive their own separate vehicle.',
       },
       {
         value: 8,
@@ -97,25 +97,25 @@ const questions = [
       {
         value: 10,
         ans:
-          'Try and separate some that could be in better shape and donate them',
+          'Try and separate the ones in better shape and donate them',
       },
     ],
     type: 'multipleChoice',
   },
   {
-    ques: 'On average how long do use your devices for',
+    ques: 'On average, how long do use your devices for?',
     ans: [
       {
         value: 10,
-        ans: 'Less than 8 hours',
+        ans: 'Less than 8 hours.',
       },
       {
         value: 5,
-        ans: 'between 8 and 12 hours',
+        ans: 'between 8 and 12 hours.',
       },
       {
         value: 0,
-        ans: 'More than 12',
+        ans: 'More than 12.',
       },
     ],
     type: 'multipleChoice',
@@ -143,19 +143,19 @@ const questions = [
     type: 'multipleChoice',
   },
   {
-    ques: 'When your parent get groceries, do they...',
+    ques: 'When your parents get groceries, do they...',
     ans: [
       {
         value: 0,
-        ans: 'Buy from big chains',
+        ans: 'Buy from big chain stores such as Walmart, Target, and Costco.',
       },
       {
         value: 5,
-        ans: 'Smaller family owned supermarkets',
+        ans: 'Smaller family owned supermarkets.',
       },
       {
         value: 10,
-        ans: 'Local farmer markets',
+        ans: 'Local farmer markets.',
       },
     ],
     type: 'multipleChoice',
@@ -166,25 +166,25 @@ const questions = [
     ans: [
       {
         value: 10,
-        ans: 'None',
+        ans: 'None.',
       },
       {
         value: 8,
-        ans: 'Less than 2',
+        ans: 'Less than 2.',
       },
       {
         value: 5,
-        ans: 'Between 2 and 4',
+        ans: 'Between 2 and 4.',
       },
       {
         value: 0,
-        ans: 'More than 5',
+        ans: 'More than 5.',
       },
     ],
     type: 'multipleChoice',
   },
   {
-    ques: 'On average, how long do you keep the lights on in a day?',
+    ques: 'On average, how long do you keep the lights on during the day?',
     ans: ['0 hours', '24 hours'],
     type: 'slider',
   },
@@ -198,29 +198,29 @@ const questions = [
     ans: [
       {
         value: 0,
-        ans: 'Yes',
+        ans: 'Yes.',
       },
       {
         value: 10,
-        ans: 'No',
+        ans: 'No.',
       },
     ],
     type: 'multipleChoice',
   },
   {
-    ques: 'Its Saturday and you need new clothes do you...',
+    ques: 'Its Saturday and you need new clothes, do you...',
     ans: [
       {
         value: 10,
-        ans: 'I go to my local second hand store',
+        ans: 'Go to your local thrift store.',
       },
       {
         value: 5,
-        ans: 'I go to a local shop near me',
+        ans: 'Go to a local retail store nearby.',
       },
       {
         value: 0,
-        ans: 'I buy online',
+        ans: 'Purchase clothes online.',
       },
     ],
     type: 'multipleChoice',
