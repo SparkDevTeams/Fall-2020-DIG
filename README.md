@@ -14,7 +14,7 @@ Fall 2020 Dream In Green Project
 ## Scripts:
 
 ### `npm start`
-Runs the app in the development mode.
+Runs the app in the development mode..
 ### `npm run build`
 Builds the app for production.
 
